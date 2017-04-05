@@ -1,0 +1,32 @@
+extends ~layouts/split
+
+block title
+    | The store
+
+block content_left
+    +code('src/app.js', 'javascript')
+        include:escape ./store.jsx
+
+block content_right
+    p
+     | Store is the centerpiece of redux.
+     | It glues state, actions and reducers together.
+     | There will be only one store per application.
+
+    +code_fragment('5')
+        :markdown-it
+            Create the store using the `createStore` funciton from `redux`.
+            It takes the reducer as first argument.
+
+    +code_fragment('7-12')
+        :markdown-it
+            Use the `subscribe` method and pass in a callback.
+            The callback will be called after every dispatched action.
+
+    +code_fragment('8')
+        :markdown-it
+            You can access the current application state using the `getState` method.
+
+    +code_fragment('13-15')
+        :markdown-it
+            Use the `dispatch` method to run some actions against the store.

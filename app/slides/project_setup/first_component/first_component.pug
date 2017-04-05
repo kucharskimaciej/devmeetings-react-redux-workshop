@@ -1,0 +1,35 @@
+extends ~layouts/split
+
+block title
+    | Just a function
+
+block content_left
+    +code('src/App.js', 'javascript')
+        :escape
+            import React from 'react'
+
+            function App() {
+                return (
+                    <h1>Hello DevMeetings!</h1>
+                )
+            }
+
+            export default App
+
+    +code_fragment('1').current-only
+        :markdown-it
+            Even though we are not using the `React` variable directly, it has to be included to use the JSX syntax
+
+    +code_fragment('3-7').current-only
+        :markdown-it
+            Most common React components are just simple functions that return some markup
+
+    +code_fragment('5').current-only
+        | return JSX
+
+    +code_fragment('9').current-only
+        :markdown-it
+            Make sure the function is exported from the file, so we can use it in other files.
+
+block content_right
+    img(src=require('slides/project_setup/first_component/first_component.png'))

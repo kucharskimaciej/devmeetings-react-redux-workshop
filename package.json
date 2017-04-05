@@ -1,0 +1,45 @@
+{
+  "scripts": {
+    "start": "npm run server:dev",
+    "server:dev": "node -r babel-register ./node_modules/.bin/webpack-dev-server --config ./.webpack/development.js --content-base ./app --progress --history-api-fallback",
+    "build:dev": "node -r babel-register ./node_modules/.bin/webpack --config ./.webpack/development.js --progress --profile --colors",
+    "watch:dev": "node -r babel-register ./node_modules/.bin/webpack --config ./.webpack/development.js --profile --colors --watch",
+    "build:production": "node -r babel-register ./node_modules/.bin/webpack --config ./.webpack/production.js"
+  },
+  "devDependencies": {
+    "babel-core": "^6.20.0",
+    "babel-loader": "^6.2.9",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-preset-stage-1": "^6.16.0",
+    "concurrently": "^3.1.0",
+    "copy-webpack-plugin": "^3.0.1",
+    "css-loader": "^0.24.0",
+    "cssnano": "^3.10.0",
+    "dotenv": "^2.0.0",
+    "escape-html": "^1.0.3",
+    "extract-text-webpack-plugin": "^2.0.0-beta.4",
+    "file-loader": "^0.10.0",
+    "html-loader": "^0.4.4",
+    "html-webpack-plugin": "^2.24.1",
+    "html-webpack-pug-plugin": "0.0.3",
+    "import-glob": "^1.5.0",
+    "import-glob-loader": "^1.1.0",
+    "node-sass": "^4.5.0",
+    "optimize-css-assets-webpack-plugin": "^1.3.0",
+    "pug": "^2.0.0-beta11",
+    "pug-loader": "git+https://github.com/kucharskimaciej/pug-loader.git",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^6.0.2",
+    "sass-resources-loader": "^1.2.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^2.1.0-beta.27",
+    "webpack-dev-server": "^2.1.0-beta.12"
+  },
+  "dependencies": {
+    "highlight.js": "^9.9.0",
+    "jstransformer-markdown-it": "^2.0.0",
+    "reveal-code-focus": "^1.0.0",
+    "reveal.js": "^3.4.1"
+  }
+}

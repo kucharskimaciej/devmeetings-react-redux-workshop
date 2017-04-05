@@ -1,0 +1,30 @@
+extends ~layouts/columns
+
+block title
+    | Dispatching actions
+
+block content
+    +slide_column()
+        +code('src/reducer.js', 'javascript')
+            include:escape ./dispatch.jsx
+
+    +slide_column()
+        +code_fragment('5-24').current-only
+            :markdown-it
+                A simple component that displays the current balance
+
+        +code_fragment('26-30').current-only
+            :markdown-it
+                The balance is provided by `mapStateToProps` function
+
+        +code_fragment('7-9').current-only
+            :markdown-it
+                Clicking a button will result in action being called
+
+        +code_fragment('8').current-only
+            :markdown-it
+                The action is created by an action creator: `DepositAction`/`WithdrawAction`
+
+        +code_fragment('8').current-only
+            :markdown-it
+                The `connect` function also provides the store's `dispatch` method in props

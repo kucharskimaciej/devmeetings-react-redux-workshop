@@ -1,0 +1,35 @@
+extends ~layouts/single_column
+
+block title
+    | Jump right into react
+
+block content
+
+    | You'll need node version >= 4
+    +code(null, 'bash', 'block')
+        | > node -v
+        | v6.9.5
+
+    +fragment()
+        :markdown-it
+            Install `create-react-app` package globally
+
+        +code(null, 'bash', 'block')
+            | > npm install -g create-react-app
+
+    +fragment()
+        +code_block()
+        :markdown-it
+            Create a new app using `create-react-app APP_NAME`
+
+        +code(null, 'bash', 'block')
+            | > create-react-app react-workshop
+            | Creating a new React app...
+            | Happy hacking!
+
+    +fragment()
+        :markdown-it
+            Start the application
+
+        +code(null, 'bash', 'block')
+            | > npm start

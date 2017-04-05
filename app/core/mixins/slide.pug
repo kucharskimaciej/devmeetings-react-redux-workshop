@@ -1,0 +1,35 @@
+mixin slide(type)
+    section(class='dm-slide dm-slide--' + type)
+        .dm-slide__content-wrapper
+            case type
+                when 'single-column'
+                    h3.dm-slide__title
+                        block title
+
+                    .dm-slide__content
+                        block content
+
+                when 'columns'
+                    h3.dm-slide__title
+                        block title
+
+                    .dm-slide__content
+                        block content
+
+                when 'title-page'
+                    h1.dm-slide__title
+                        block title
+
+                when 'split'
+                    h3.dm-slide__title
+                        block title
+
+                    .dm-slide__content
+                        .dm-slide__content__column
+                            block content_left
+                        .dm-slide__content__column
+                            block content_right
+
+                when 'custom'
+                default
+                    block content

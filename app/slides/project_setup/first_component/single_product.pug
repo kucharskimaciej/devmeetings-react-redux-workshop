@@ -1,0 +1,46 @@
+extends ~layouts/columns
+
+block title
+    | Just a function
+
+block content
+    +slide_column(65)
+        +code('src/App.js', 'javascript')
+            :escape
+                function App() {
+                    const product = {
+                      name: "JavaScript: The Definitive Guide",
+                      description: `Since 1996, JavaScript: The Definitive Guide has been the bible for JavaScript programmers.`,
+                      price: 28.89
+                    }
+
+                    return (
+                        <section>
+                            <h1>Hello DevMeetings!</h1>
+
+                            <div>
+                                <header>{ product.name }</header>
+                                <p>
+                                    { product.description }
+                                </p>
+                                <span>{ product.price }$</span>
+                            </div>
+                        </section>
+                    )
+                }
+
+
+        +code_fragment('2-6').current-only
+            :markdown-it
+                We are hardcoding the product data in the function
+
+        +code_fragment('9-18').current-only
+            :markdown-it
+                It's important that the component returns just one HTML element in the top-level. Any more than that and React will throw an error.
+
+        +code_fragment('12').current-only
+            :markdown-it
+                Any javascript in the curly braces (`{ code }`) will be evaluated.
+
+    +slide_column()
+        img(src=require('slides/project_setup/first_component/single_product.png'))

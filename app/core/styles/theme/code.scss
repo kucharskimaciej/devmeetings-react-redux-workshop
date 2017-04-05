@@ -1,0 +1,10 @@
+.reveal .dm-code {
+  height: auto;
+
+  &__editor {
+    max-height: 650px;
+
+    font-size: 0.7rem;
+    line-height: 1.3;
+  }
+}

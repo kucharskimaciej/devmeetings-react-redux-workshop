@@ -1,0 +1,58 @@
+extends ~layouts/split
+
+block title
+    | First routes
+
+block content_left
+    +code('src/App.js', 'javascript')
+        :escape
+            import React from 'react'
+            import { BrowserRouter, Route } from 'react-router-dom'
+
+            import HomePageComponent from './components/home'
+            import ContactsPageComponent from './components/contact'
+
+            function AppComponent() {
+                return (
+                    <BrowserRouter>
+                        <div>
+                            <h1>Hello DevMeetings!</h1>
+
+                            <Route path="/home" component={HomePageComponent}></Route>
+                            <Route path="/contacts" component={ContactsPageComponent}></Route>
+                        </div>
+                    </BrowserRouter>
+                )
+            }
+
+            export default AppComponent
+
+block content_right
+    +fragment()
+        :markdown-it
+            The router needs to be installed first using:
+            ```sh
+            npm install --save react-router-dom
+            ```
+            in the console
+
+    +code_fragment('2')
+        :markdown-it
+            Import components from the package. `BrowserRouter` provides routing using the HTML5 `historyAPI`
+            and `Route` represents a single page.
+
+    +code_fragment('9-16')
+        :markdown-it
+            Routing will be available to everything that is wrapped in the `BrowserRouter` tag
+
+    +code_fragment('10-15')
+        :markdown-it
+            Browser router takes exactly one child element
+
+    +code_fragment('14-15')
+        :markdown-it
+            A `Route` component defines which component to display when user navigates to specified path
+
+    +code_fragment('11')
+        :markdown-it
+            Content that is not the `Route` component will be always render

@@ -1,0 +1,23 @@
+.dm-slide--split {
+
+  .dm-slide__content {
+    display: flex;
+    flex-direction: row;
+
+    padding-left: 1rem;
+    padding-right: 1rem;
+
+    &__column {
+      width: 50%;
+      padding: 0 0.5rem;
+
+      &:first-child {
+        padding-left: 0;
+      }
+
+      &:last-child {
+        padding-right: 0;
+      }
+    }
+  }
+}

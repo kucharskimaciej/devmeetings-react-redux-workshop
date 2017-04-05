@@ -1,0 +1,14 @@
+.hljs {
+  .line {
+    display: block;
+    opacity: .2;
+  }
+
+  .line.focus {
+    opacity: 1;
+  }
+
+  &.dm-code--initial .line {
+    opacity: 1;
+  }
+}

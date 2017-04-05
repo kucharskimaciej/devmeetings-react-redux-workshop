@@ -1,0 +1,29 @@
+extends ~layouts/columns
+
+block title
+    | Actions
+
+block content
+    +slide_column(40)
+        +code('src/actions.js', 'javascript')
+            include:escape ./actions.jsx
+
+    +slide_column()
+        p Actions are the messages that tell the store there's a need to change state
+
+        +code_fragment('2-5').current-only
+            :markdown-it
+                Action is a plain JS object
+
+        +code_fragment('3').current-only
+            :markdown-it
+                Action must have a `type` property
+
+        +code_fragment('4').current-only
+            :markdown-it
+                Usually there is some data attached to the action.
+
+        +code_fragment('8-13').current-only
+            :markdown-it
+                To avoid mistakes, like typos, action objects are returned by functions - called **action creators**
+

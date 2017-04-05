@@ -1,0 +1,30 @@
+extends ~layouts/split
+
+block title
+    | Connecting store and components
+
+block content_left
+    +code('src/reducer.js', 'javascript')
+        include:escape ./app.jsx
+
+block content_right
+    +code_fragment('4-10')
+        :markdown-it
+            A simple component that displays the current balance
+
+    +code_fragment('12-16')
+        :markdown-it
+            The `mapStateToProps` function will be called everytime the application state changes.
+
+
+    +code_fragment('13-15')
+        :markdown-it
+            It's job is to return props for the component.
+
+    +code_fragment('4')
+        :markdown-it
+            The component will receive props provided by `mapStateToProps`
+
+    +code_fragment('18')
+        :markdown-it
+            Component and the function are connected via the `connect` utility from `react-redux`

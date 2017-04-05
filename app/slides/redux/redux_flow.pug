@@ -1,0 +1,24 @@
+extends ~layouts/split
+
+block title
+    | Redux in a nutshell
+
+block content_left
+    +fragment()
+        h4 Store
+        p Holds current application state
+
+    +fragment()
+        h4 Action
+        p An object that may result in change of state
+
+    +fragment()
+        h4 store#dispatch(action)
+        p Notifies the store about an action
+
+    +fragment()
+        h4 Reducer
+        p A function that gets called for every action and returns new application state accordingly
+
+block content_right
+    | todo: redux data-flow graph

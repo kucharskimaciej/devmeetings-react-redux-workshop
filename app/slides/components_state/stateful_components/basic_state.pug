@@ -1,0 +1,34 @@
+extends ~layouts/columns
+
+block title
+    | Stateful components
+
+block content
+    +slide_column(60)
+        +code('src/App.js', 'javascript')
+            include:escape ./counter_clicker.jsx
+
+    +slide_column()
+        img(src=require('slides/components_state/stateful_components/click_count.gif'))
+
+        +code_fragment('4-6').current-only
+            :markdown-it
+                Component state is always kept in a property called `state`.
+                `state` and `props` are the only properites that React watches for changes.
+
+        +code_fragment('4-6').current-only
+            :markdown-it
+                Define initial component state.
+                This is the only place where you write to the state property directly
+
+        +code_fragment('17').current-only
+            :markdown-it
+                Display data from the state
+
+        +code_fragment('9-11').current-only
+            :markdown-it
+                Modify the state using the `setState` method. `this.state = ...` will not work.
+
+        +code_fragment('8-12').current-only
+            :markdown-it
+                Arrow function is used to bind `this` correctly to the component instance
