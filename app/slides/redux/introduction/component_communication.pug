@@ -1,0 +1,26 @@
+extends ~layouts/columns
+
+block title
+    | Communication between components
+
+block content
+
+    +slide_column()
+        img(src=require('slides/redux/introduction/component_communication.png'))
+
+        +fragment().current-only
+            :markdown-it
+                The last example could be modified to showcase the bi-directional communication between two components:
+                the stateful parent (which keeps the `clickCount` in state) and a stateless child.
+
+        +fragment().current-only
+            :markdown-it
+                The parent component passes data (`clickCount`) down to it's children using props.
+
+        +fragment().current-only
+            :markdown-it
+                Alongside the data it also passes a callback (`onClick`) to enable the child to talk back.
+
+        +fragment().current-only
+            :markdown-it
+                What about components that are not in the parent-child relation?

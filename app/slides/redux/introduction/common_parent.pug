@@ -1,0 +1,23 @@
+extends ~layouts/columns
+
+block title
+    | Common parent
+
+block content
+
+    +slide_column(40)
+        img(src=require('slides/redux/introduction/common_parent.png'))
+
+    +slide_column()
+        +fragment().current-only
+            :markdown-it
+                The solution is to communicate via the nearest common ancestor.
+
+        +fragment().current-only
+            :markdown-it
+                It's very easy when the components are close to each other...
+
+        +fragment().current-only
+            :markdown-it
+                ...but gets harder as the distance increases.
+

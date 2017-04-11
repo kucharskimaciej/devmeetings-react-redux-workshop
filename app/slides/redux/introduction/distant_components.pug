@@ -1,0 +1,23 @@
+extends ~layouts/columns
+
+block title
+    | Distant components
+
+block content
+
+    +slide_column()
+        img(src=require('slides/redux/introduction/distant_components.png'))
+
+        +fragment().current-only
+            :markdown-it
+                For bigger component hierarchies this method becomes unmanageable.
+
+        +fragment().current-only
+            :markdown-it
+                The application becomes fragile, it's hard to move components around,
+                and creating a simple interaction requires lots of code.
+
+        +fragment().current-only
+            :markdown-it
+                There is also another issue: central components must hold too much state and responsibility.
+
