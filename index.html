@@ -237,7 +237,44 @@ This is the only place where you write to the state property directly</p>
 </span><span class="current-only fragment dm-code-fragment" data-code-focus="17"><p>Display data from the state</p>
 </span><span class="current-only fragment dm-code-fragment" data-code-focus="9-11"><p>Modify the state using the <code>setState</code> method. <code>this.state = ...</code> will not work.</p>
 </span><span class="current-only fragment dm-code-fragment" data-code-focus="8-12"><p>Arrow function is used to bind <code>this</code> correctly to the component instance</p>
-</span></div></div></div></section><section class="dm-slide dm-slide--single-column"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Tasks</h3><div class="dm-slide__content"><ol>
+</span></div></div></div></section><section><section class="dm-slide dm-slide--single-column"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Loading data from server</h3><div class="dm-slide__content"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/App.js</strong><code class="dm-code__editor hljs javascript">class AsyncList extends Component {
+    componentDidMount() {
+        API.loadPosts()
+            .then(posts =&gt; this.setState({ posts }))
+    }
+
+    render() {
+        if (this.state.posts) {
+            return (
+                &lt;List items={this.state.posts} /&gt;
+            )
+        }
+
+        return &lt;p&gt;Loading...&lt;/p&gt;;
+    }
+}
+</code></pre><span class="current-only fragment dm-code-fragment" data-code-focus="3-4"><p>Instead of posts being hardcoded in the component, they will be fetched from the server</p>
+</span><span class="current-only fragment dm-code-fragment" data-code-focus="2-5"><p>Side effects like Ajax requests are best placed in the <code>componentDidMount</code> lifecycle hook</p>
+</span><span class="current-only fragment dm-code-fragment" data-code-focus="8-12"><p>If the posts are loaded (the <code>posts</code> property exists on state) the list will be shown</p>
+</span><span class="current-only fragment dm-code-fragment" data-code-focus="14"><p>Otherwise the component will render a loading indicator.</p>
+</span></div></div></section><section class="dm-slide dm-slide--single-column"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Lifecycle hooks</h3><div class="dm-slide__content"><h3>componentWillMount</h3>
+<p>Called just before the first render. It's better to just use class constructor instead.
+It might be removed in future versions.</p>
+<h3>componentDidMount</h3>
+<p>Called after the component is rendered.
+Most useful for side effects: API calls, timers, non-React code (ie. initializing a jQuery plugin).</p>
+<h3>componentWillReceiveProps</h3>
+<p>Called with new props, before render. Changing component's state here will not trigger another render.
+Useful if the component's state is computed based on props.</p>
+<h3>shouldComponentUpdate</h3>
+<p>There are new props or new state, but maybe there is no need to render the component again. For performance tweaking.</p>
+<h3>componentWillUpdate</h3>
+<p>Similar to <code>componentWillReceiveProps</code>, but can't change state. Called just before render. Rarely used.</p>
+<h3>componentDidUpdate</h3>
+<p>Called right after a render. Use to update DOM in response to state/props changes.</p>
+<h3>componentWillUnmount</h3>
+<p>Called before the component is removed. Useful for cleanup, typically compliments the <code>componentDidMount</code>.</p>
+</div></div></section></section><section class="dm-slide dm-slide--single-column"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Tasks</h3><div class="dm-slide__content"><ol>
 <li>[basic] Add searching the contacts by name</li>
 <li>[basic] Change search to include all fields</li>
 <li>[optional] Add button to sort the contacts alphabetically. Clicking it should toggle sorting direction.</li>
@@ -316,7 +353,29 @@ export default AppComponent
 <p>[advanced] Add route for a single contact page</p>
 </li>
 </ol>
-</div></div></section><section class="dm-slide dm-slide--title-page"><div class="dm-slide__content-wrapper"><h1 class="dm-slide__title">Redux<small class="dm-slide__title__subtitle">Application state management</small></h1></div></section><section class="dm-slide dm-slide--split"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Redux in a nutshell</h3><div class="dm-slide__content"><div class="dm-slide__content__column"><span class="fragment dm-fragment"><h4>Store</h4><p>Holds current application state</p></span><span class="fragment dm-fragment"><h4>Action</h4><p>An object that may result in change of state</p></span><span class="fragment dm-fragment"><h4>store#dispatch(action)</h4><p>Notifies the store about an action</p></span><span class="fragment dm-fragment"><h4>Reducer</h4><p>A function that gets called for every action and returns new application state accordingly</p></span></div><div class="dm-slide__content__column">todo: redux data-flow graph</div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Actions</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:40%;flex-basis:40%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/actions.js</strong><code class="dm-code__editor hljs javascript">export function WithdrawAction(amount) {
+</div></div></section><section class="dm-slide dm-slide--title-page"><div class="dm-slide__content-wrapper"><h1 class="dm-slide__title">Redux<small class="dm-slide__title__subtitle">Application state management</small></h1></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Communication between components</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><img src="7a5f6e23883f24e4e9a9d3fa4716676e.png"><span class="current-only fragment dm-fragment"><p>The last example could be modified to showcase the bi-directional communication between two components:
+the stateful parent (which keeps the <code>clickCount</code> in state) and a stateless child.</p>
+</span><span class="current-only fragment dm-fragment"><p>The parent component passes data (<code>clickCount</code>) down to it's children using props.</p>
+</span><span class="current-only fragment dm-fragment"><p>Alongside the data it also passes a callback (<code>onClick</code>) to enable the child to talk back.</p>
+</span><span class="current-only fragment dm-fragment"><p>What about components that are not in the parent-child relation?</p>
+</span></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Common parent</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:40%;flex-basis:40%;"><img src="c0208d811cd50d430e3663af4ea5404f.png"></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><span class="current-only fragment dm-fragment"><p>The solution is to communicate via the nearest common ancestor.</p>
+</span><span class="current-only fragment dm-fragment"><p>It's very easy when the components are close to each other...</p>
+</span><span class="current-only fragment dm-fragment"><p>...but gets harder as the distance increases.</p>
+</span></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Distant components</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><img src="58c80e0603afe11d2cab919c0bed3d72.png"><span class="current-only fragment dm-fragment"><p>For bigger component hierarchies this method becomes unmanageable.</p>
+</span><span class="current-only fragment dm-fragment"><p>The application becomes fragile, it's hard to move components around,
+and creating a simple interaction requires lots of code.</p>
+</span><span class="current-only fragment dm-fragment"><p>There is also another issue: central components must hold too much state and responsibility.</p>
+</span></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Separate state from UI</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><img src="7da3fb1d180546f2fce78de1684e9a1e.png"><span class="current-only fragment dm-fragment"><p>One of the solutions is to move the application state away from it's view layer (aka components).</p>
+</span><span class="current-only fragment dm-fragment"><p>All of the data will be kept in an object accesible by every component.</p>
+</span><span class="current-only fragment dm-fragment"><p>Components will be able to modify the state using events.</p>
+</span></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Principles of Redux</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:40%;flex-basis:40%;"><img src="b4e23a502e44692d9f3c8b427ac23e01.png"></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><span class="fragment dm-fragment"><h3>Single source of truth</h3>
+<p>The complete state of an application is kept in one place, which ensures no duplication or conflicts.</p>
+</span><span class="fragment dm-fragment"><h3>Predictable</h3>
+<p>The state can only be changed via events (actions). It makes tracking the changes very easy.</p>
+</span><span class="fragment dm-fragment"><h3>Immutable</h3>
+<p>The state is represented as an immutable object. Every change creates a new snapshot.
+This provides solid performance (no need to compare values!) and easy testing.</p>
+</span></div></div></div></section><section class="dm-slide dm-slide--split"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Redux in a nutshell</h3><div class="dm-slide__content"><div class="dm-slide__content__column"><span class="fragment dm-fragment"><h4>Store</h4><p>Holds current application state</p></span><span class="fragment dm-fragment"><h4>Action</h4><p>An object that may result in change of state</p></span><span class="fragment dm-fragment"><h4>store#dispatch(action)</h4><p>Notifies the store about an action</p></span><span class="fragment dm-fragment"><h4>Reducer</h4><p>A function that gets called for every action and returns new application state accordingly</p></span></div><div class="dm-slide__content__column">todo: redux data-flow graph</div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Actions</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:40%;flex-basis:40%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/actions.js</strong><code class="dm-code__editor hljs javascript">export function WithdrawAction(amount) {
    return {
        type: &#39;WITHDRAW&#39;,
        amount
@@ -477,4 +536,4 @@ export default connect(mapStateToProps)(AppComponent);
 <p>[advanced] Add the ability to add new contacts</p>
 </li>
 </ol>
-</div></div></div></section></div></div><script type="text/javascript" src="vendor.bundle_ee9098517ea5483abc4d.js"></script><script type="text/javascript" src="bundle_ee9098517ea5483abc4d.js"></script></body></html>
+</div></div></div></section></div></div><script type="text/javascript" src="vendor.bundle_308ee690b2d11d251a86.js"></script><script type="text/javascript" src="bundle_308ee690b2d11d251a86.js"></script></body></html>
