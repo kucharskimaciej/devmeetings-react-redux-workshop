@@ -1,0 +1,26 @@
+extends ~layouts/single_column
+
+block title
+    | Loading data from server
+
+block content
+
+    +code('src/App.js', 'javascript')
+        include:escape ./async_state.jsx
+
+
+    +code_fragment('3-4').current-only
+        :markdown-it
+            Instead of posts being hardcoded in the component, they will be fetched from the server
+
+    +code_fragment('2-5').current-only
+        :markdown-it
+            Side effects like Ajax requests are best placed in the `componentDidMount` lifecycle hook
+
+    +code_fragment('8-12').current-only
+        :markdown-it
+            If the posts are loaded (the `posts` property exists on state) the list will be shown
+
+    +code_fragment('14').current-only
+        :markdown-it
+            Otherwise the component will render a loading indicator.
