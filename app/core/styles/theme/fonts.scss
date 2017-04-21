@@ -1,0 +1,16 @@
+@import "mixins";
+
+@include font-face('Fira Mono', '~public/core/fonts/FiraMono-Regular', normal, normal, ttf);
+@include font-face('Fira Mono', '~public/core/fonts/FiraMono-Medium', 500, normal, ttf);
+@include font-face('Fira Mono', '~public/core/fonts/FiraMono-Bold', 700, normal, ttf);
+
+@include font-face('Gloria Hallelujah', '~public/core/fonts/GloriaHallelujah', normal, normal, ttf);
+
+@include font-face('Lato', '~public/core/fonts/Lato-Reg', normal, normal, ttf);
+@include font-face('Lato', '~public/core/fonts/Lato-RegIta', normal, italic, ttf);
+@include font-face('Lato', '~public/core/fonts/Lato-Bol', 700, normal, ttf);
+@include font-face('Lato', '~public/core/fonts/Lato-BolIta', 700, italic, ttf);
+@include font-face('Lato', '~public/core/fonts/Lato-Bla', 900, normal, ttf);
+@include font-face('Lato', '~public/core/fonts/Lato-BlaIta', 900, italic, ttf);
+@include font-face('Lato', '~public/core/fonts/Lato-Lig', 300, normal, ttf);
+@include font-face('Lato', '~public/core/fonts/Lato-LigIta', 300, italic, ttf);

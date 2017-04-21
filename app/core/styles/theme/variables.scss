@@ -1,1 +1,24 @@
-$font-size-base: 30px;
+$fw-normal: 400;
+$fw-light: 300;
+$fw-bold: 700;
+$fw-black: 900;
+
+$ff-monospace: 'Fira Mono', monospace;
+$ff-base: 'Lato', sans-serif;
+$ff-fancy: 'Gloria Hallelujah', 'Lato', sans-serif;
+
+$fz-base: 24px;
+$fz-normal: $fz-base;
+
+
+$lh-normal: 1.4;
+$lh-condensed: 1.2;
+$lh-extra-condensed: 1.05;
+
+$lh-normal-computed: $lh-normal * 1rem;
+$lh-condensed-computed: $lh-normal * 1rem;
+
+$color-block-bg: #fff;
+
+$royal-blue: #2468e2;
+$black-rock: #2a2f38;

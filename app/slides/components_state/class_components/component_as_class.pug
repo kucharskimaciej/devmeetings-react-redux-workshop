@@ -1,34 +1,34 @@
-extends ~layouts/single_column
+extends ~layouts/columns
 
 block title
     | Component as Class
 
 block content
+    +slide_column()
+        +code('src/App.js', 'javascript')
+            include:escape ./class_component.jsx
 
-    +code('src/App.js', 'javascript')
-        include:escape ./class_component.jsx
+    +slide_column().l-column-middle
+        +code_focus('1').current-only
+            :markdown-it
+                Import the `Component` base class from `react`
 
+        +code_focus('3-11').current-only
+            :markdown-it
+                Use class instead of a function to define the component
 
-    +code_fragment('1').current-only
-        :markdown-it
-            Import the `Component` base class from `react`
+        +code_focus('3').current-only
+            :markdown-it
+                The class must extend `Component`
 
-    +code_fragment('3-11').current-only
-        :markdown-it
-            Use class instead of a function to define the component
+        +code_focus('6-10').current-only
+            :markdown-it
+                Code responsible for rendering the component will be in the `render` method
 
-    +code_fragment('3').current-only
-        :markdown-it
-            The class must extend `Component`
+        +code_focus('4').current-only
+            :markdown-it
+                The class may have some data or additional funcitons attached to it
 
-    +code_fragment('6-10').current-only
-        :markdown-it
-            Code responsible for rendering the component will be in the `render` method
-
-    +code_fragment('4').current-only
-        :markdown-it
-            The class may have some data or additional funcitons attached to it
-
-    +code_fragment('8').current-only
-        :markdown-it
-            `this` represents a specific instance of the ClassComponent
+        +code_focus('8').current-only
+            :markdown-it
+                `this` represents a specific instance of the ClassComponent

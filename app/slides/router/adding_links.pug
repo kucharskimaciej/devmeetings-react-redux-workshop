@@ -1,39 +1,40 @@
-extends ~layouts/single_column
+extends ~layouts/columns
 
 block title
     | Adding links
 
 block content
-    +code('src/App.js', 'javascript')
-        :escape
-            import React from 'react'
-            import { BrowserRouter, Route, Link } from 'react-router-dom'
+    +slide_column()
+        +code('src/App.js', 'javascript')
+            :escape
+                import React from 'react'
+                import { BrowserRouter, Route, Link } from 'react-router-dom'
 
-            import HomePageComponent from './components/home'
-            import ContactsPageComponent from './components/contact'
+                import HomePageComponent from './components/home'
+                import ContactsPageComponent from './components/contact'
 
-            function AppComponent() {
-                return (
-                    <BrowserRouter>
-                        <div>
-                            <nav>
-                                <Link to="/home">Home</Link>
-                                <Link to="/contacts">Contacts</Link>
-                            </nav>
+                function AppComponent() {
+                    return (
+                        <BrowserRouter>
+                            <div>
+                                <nav>
+                                    <Link to="/home">Home</Link>
+                                    <Link to="/contacts">Contacts</Link>
+                                </nav>
 
-                            <Route path="/home" component={HomePageComponent}></Route>
-                            <Route path="/contacts" component={ContactsPageComponent}></Route>
-                        </div>
-                    </BrowserRouter>
-                )
-            }
+                                <Route path="/home" component={HomePageComponent}></Route>
+                                <Route path="/contacts" component={ContactsPageComponent}></Route>
+                            </div>
+                        </BrowserRouter>
+                    )
+                }
 
-            export default AppComponent
+                export default AppComponent
 
-    +code_fragment('2').current-only
-        :markdown-it
-            Add the `Link` component to the list of imports
+        +code_focus('2').current-only
+            :markdown-it
+                Add the `Link` component to the list of imports
 
-    +code_fragment('12-13').current-only
-        :markdown-it
-            The component will render a link with correct `href` and text.
+        +code_focus('12-13').current-only
+            :markdown-it
+                The component will render a link with correct `href` and text.

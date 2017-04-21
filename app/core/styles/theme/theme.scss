@@ -1,13 +1,18 @@
 @import "variables";
+@import "fonts";
 @import "typography";
 
 @import "general";
-
-@import "code";
-@import "code_fragment";
+@import "layout";
 
 @import "layouts/slide";
 @import "layouts/title_page";
 @import "layouts/split";
 @import "layouts/columns";
+
+@import "components/code";
+@import "components/code-focus";
+@import "components/fragment";
+@import "components/message-box";
+@import "components/task";
 

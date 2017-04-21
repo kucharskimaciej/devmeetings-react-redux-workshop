@@ -1,0 +1,41 @@
+.dm-slide .dm-message-box {
+  background-color: #fff;
+  padding: rem(18px) rem(24px) rem(16px);
+
+  margin-bottom: $lh-condensed-computed;
+
+  font-size: rem(20px);
+  color: $black-rock;
+  text-align: left;
+  position: relative;
+
+  &__title {
+    font-weight: $fw-bold;
+    margin-bottom: $lh-condensed-computed/4;
+  }
+
+  &--hint {
+    box-shadow: 0px 15px 43px 0px rgba(36, 104, 226, 0.4);
+
+    &:after {
+      display: block;
+      visibility: visible;
+      content: "";
+
+      width: rem(100px);
+      height: rem(100px);
+
+      position: absolute;
+      left: rem(-64px);
+      top: rem(-32px);
+
+      background-image: url('~public/core/images/icon_info_medium.png');
+      background-size: cover;
+    }
+  }
+
+  &--inside-box-hint {
+    padding: rem(9px) rem(12px) rem(8px);
+    margin-bottom: $lh-condensed-computed/2;
+  }
+}

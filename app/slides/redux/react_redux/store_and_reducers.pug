@@ -5,19 +5,19 @@ block title
 
 
 block content
-    +slide_column(40)
+    +slide_column(50)
         +code('src/store.js', 'javascript')
             include:escape ./index.jsx
 
     +slide_column()
-        +code_fragment('9').current-only
+        +code_focus('9').current-only
             :markdown-it
                 Reducers stay exactly the same
 
-        +code_fragment('11').current-only
+        +code_focus('11').current-only
             :markdown-it
                 Create the store
 
-        +code_fragment('14-16').current-only
+        +code_focus('14-16').current-only
             :markdown-it
                 The `Provider` component allows access to the store for all components in the application

@@ -1,0 +1,15 @@
+.dm-slide .dm-code-focus {
+  font-size: 1rem;
+  line-height: $lh-normal-computed;
+  font-family: $ff-fancy;
+
+  code {
+    display: inline-block;
+    padding: 0 rem(3px);
+    color: $royal-blue;
+  }
+
+  &.focus-only {
+    display: none !important;
+  }
+}

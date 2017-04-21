@@ -1,46 +1,42 @@
-extends ~layouts/single_column
+extends ~layouts/columns
 
 block title
     | Lifecycle hooks
 
 block content
-    :markdown-it
-        ### componentWillMount
+    +slide_column()
+        .dm-fragment
+            :markdown-it
+                ### `componentWillMount`
 
-        Called just before the first render. It's better to just use class constructor instead.
-        It might be removed in future versions.
+                Called just before the first render. It's better to just use class constructor instead.
+                It might be removed in future versions.
 
+                ### `componentWillReceiveProps`
 
-        ### componentDidMount
+                Called with new props, before render. Changing component's state here will not trigger another render.
+                Useful if the component's state is computed based on props.
 
-        Called after the component is rendered.
-        Most useful for side effects: API calls, timers, non-React code (ie. initializing a jQuery plugin).
+                ### `componentWillUpdate`
 
+                Similar to `componentWillReceiveProps`, but can't change state. Called just before render. Rarely used.
 
-        ### componentWillReceiveProps
+    +slide_column()
+        .dm-fragment
+            :markdown-it
+                ### `componentDidMount`
 
-        Called with new props, before render. Changing component's state here will not trigger another render.
-        Useful if the component's state is computed based on props.
+                Called after the component is rendered.
+                Most useful for side effects: API calls, timers, non-React code (ie. initializing a jQuery plugin).
 
+                ### `shouldComponentUpdate`
 
-        ### shouldComponentUpdate
+                There are new props or new state, but maybe there is no need to render the component again. For performance tweaking.
 
-        There are new props or new state, but maybe there is no need to render the component again. For performance tweaking.
+                ### `componentDidUpdate`
 
+                Called right after a render. Use to update DOM in response to state/props changes.
 
-        ### componentWillUpdate
+                ### `componentWillUnmount`
 
-        Similar to `componentWillReceiveProps`, but can't change state. Called just before render. Rarely used.
-
-
-        ### componentDidUpdate
-
-        Called right after a render. Use to update DOM in response to state/props changes.
-
-
-        ### componentWillUnmount
-
-        Called before the component is removed. Useful for cleanup, typically compliments the `componentDidMount`.
-
-
-
+                Called before the component is removed. Useful for cleanup, typically compliments the `componentDidMount`.

@@ -1,0 +1,75 @@
+.dm-slide .dm-task {
+  $padding-horizontal: rem(70px);
+
+  height: auto;
+  width: 80%;
+  margin-bottom: $lh-condensed-computed/2;
+
+  padding: rem(15px) $padding-horizontal rem(15px);
+
+  font-size: rem(24px);
+  line-height: $lh-condensed-computed;
+  text-align: left;
+
+  position: relative;
+
+  &__body {
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  &__difficulty {
+    font-weight: $fw-bold;
+    font-size: rem(16px);
+    line-height: $lh-extra-condensed;
+  }
+
+  .dm-message-box {
+    margin-top: rem(6px);
+  }
+
+  &--basic {
+    .dm-task__difficulty:before {
+      content: "Basic"
+    }
+
+    &:after {
+      display: block;
+      visibility: visible;
+      content: "";
+
+      width: rem(100px);
+      height: rem(100px);
+
+      position: absolute;
+      left: rem(-30px);
+      top: rem(-3px);
+
+      background-image: url('~public/core/images/icon_simple_medium.png');
+      background-size: cover;
+    }
+  }
+
+  &--optional {
+    .dm-task__difficulty:before {
+      content: "Optional"
+    }
+
+    &:after {
+      display: block;
+      visibility: visible;
+      content: "";
+
+      width: rem(100px);
+      height: rem(100px);
+
+      position: absolute;
+      left: rem(-30px);
+      top: rem(-3px);
+
+      background-image: url('~public/core/images/icon_intermediate_medium.png');
+      background-size: cover;
+    }
+  }
+}

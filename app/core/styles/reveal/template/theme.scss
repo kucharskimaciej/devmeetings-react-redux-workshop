@@ -34,48 +34,11 @@ body {
 	font-weight: inherit;
 }
 
-/*********************************************
- * HEADERS
- *********************************************/
-
-.reveal h1,
-.reveal h2,
-.reveal h3,
-.reveal h4,
-.reveal h5,
-.reveal h6 {
-	margin: $headingMargin;
-	color: $headingColor;
-
-	font-family: $headingFont;
-	font-weight: $headingFontWeight;
-	line-height: $headingLineHeight;
-	letter-spacing: $headingLetterSpacing;
-
-	text-transform: $headingTextTransform;
-	text-shadow: $headingTextShadow;
-
-	word-wrap: break-word;
-}
-
-.reveal h1 {font-size: $heading1Size; }
-.reveal h2 {font-size: $heading2Size; }
-.reveal h3 {font-size: $heading3Size; }
-.reveal h4 {font-size: $heading4Size; }
-
-.reveal h1 {
-	text-shadow: $heading1TextShadow;
-}
 
 
 /*********************************************
  * OTHER
  *********************************************/
-
-.reveal p {
-	margin: $blockMargin 0;
-	line-height: 1.3;
-}
 
 /* Ensure certain elements are never larger than the slide itself */
 .reveal img,
@@ -157,33 +120,6 @@ body {
 
 .reveal q {
 	font-style: italic;
-}
-
-.reveal pre {
-	display: block;
-	position: relative;
-	width: 90%;
-	margin: $blockMargin auto;
-
-	text-align: left;
-	font-size: 0.55em;
-	font-family: monospace;
-	line-height: 1.2em;
-
-	word-wrap: break-word;
-
-	box-shadow: 0px 0px 6px rgba(0,0,0,0.3);
-}
-.reveal code {
-	font-family: monospace;
-}
-
-.reveal pre code {
-	display: block;
-	padding: 5px;
-	overflow: auto;
-	max-height: 400px;
-	word-wrap: normal;
 }
 
 .reveal table {

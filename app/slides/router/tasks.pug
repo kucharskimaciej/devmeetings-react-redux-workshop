@@ -1,18 +1,18 @@
-extends ~layouts/single_column
+extends ~layouts/columns
 
 block title
-    | Tasks
+    | Module #4 Tasks
 
 block content
-    :markdown-it
-        1. [basic] Setup the Router with two pages:
+    +slide_column()
+        +task('basic')
+            | Setup the Router with two pages: home page with title and message and contact list page (the current view)
 
-            * home page with a title
-            * contact list page
+        +task('basic')
+            | Create navigation component with links that displays on both pages
 
-        2. [basic] Create a menu with links that displays on both pages
+        +task('optional')
+            | The active link should be visually distinct
 
-        3. [advanced] Add styles to active links
-
-        4. [advanced] Add route for a single contact page
-
+        +task('optional')
+            | Add a route for single contact page

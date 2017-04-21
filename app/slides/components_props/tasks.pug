@@ -1,13 +1,18 @@
-extends ~layouts/single_column
+extends ~layouts/columns
 
 block title
-    | Tasks
+    | Module #2 Tasks
 
 block content
-    :markdown-it
+    +slide_column()
+        +task('basic')
+            | Create a single contact component
 
-        1. [basic] Create a single contact component
-        2. [basic] Create a component for list of products
-        3. [optional] Add tags to the contact component
-        4. [optional] Mark some contacts as favourites and show them on separate list
+        +task('basic')
+            | Create a component for list of products
 
+        +task('optional')
+            | Add tags to the contact component
+
+        +task('optional')
+            | Mark some contacts as favourites and show them on separate list

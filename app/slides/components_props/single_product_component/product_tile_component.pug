@@ -8,12 +8,12 @@ block content
         +code('src/App.js', 'javascript')
             include:escape ./productTile.jsx
 
-    +slide_column()
-        +code_fragment('3-13').current-only
+    +slide_column().l-column-middle
+        +code_focus('3-13').current-only
             :markdown-it
                 The component is simple enough to be a function
 
-        +code_fragment('3').current-only
+        +code_focus('3').current-only
             :markdown-it
                 This function will recieve a `props` object as first argument.
                 Keys of this object will map directly to attribute names used by the parent:
@@ -22,14 +22,14 @@ block content
                    <ProductTile item={ product } />
                 ```
 
-        +code_fragment('3').current-only
+        +code_focus('3').current-only
             :markdown-it
                 Destructuring the `props` object in functional components is one of the most common patterns in React
 
-        +code_fragment('1').current-only
+        +code_focus('1').current-only
             :markdown-it
                 The React lib has to be included in every file that uses JSX
 
-        +code_fragment('15').current-only
+        +code_focus('15').current-only
             :markdown-it
                 Export the component function so that it can be used elswhere

@@ -1,31 +1,33 @@
-extends ~layouts/split
+extends ~layouts/columns
 
 block title
     | Handling events
 
-block content_left
-    +code('src/App.js', 'javascript')
-        include:escape ./events_example.jsx
+block content
+    +slide_column(65)
+        +code('src/App.js', 'javascript')
+            include:escape ./events_example.jsx
 
-    +code_fragment('3').current-only
-        :markdown-it
-            Use class component to have access to instance methods and fields
+    +slide_column()
+        img(src=require('slides/components_state/clicker.gif')).l-mbn
 
-    +code_fragment('4-6').current-only
-        :markdown-it
-            Define the handler
+        +code_focus('3').current-only
+            :markdown-it
+                Use class component to have access to instance methods and fields
 
-    +code_fragment('10').current-only
-        :markdown-it
-            All handlers are assigned via the `onEventName` attribute
+        +code_focus('4-6').current-only
+            :markdown-it
+                Define the handler
 
-    +code_fragment('10').current-only
-        :markdown-it
-            Do not execute the hander here, just pass it in
+        +code_focus('10').current-only
+            :markdown-it
+                All handlers are assigned via the `onEventName` attribute
 
-    +code_fragment('5').current-only
-        :markdown-it
-            Use `event.target` to find out which button has been clicked in case you have many of them
+        +code_focus('10').current-only
+            :markdown-it
+                Do not execute the hander here, just pass it in
 
-block content_right
-    img(src=require('slides/components_state/clicker.gif'))
+        +code_focus('5').current-only
+            :markdown-it
+                Use `event.target` to find out which button has been clicked in case you have many of them
+

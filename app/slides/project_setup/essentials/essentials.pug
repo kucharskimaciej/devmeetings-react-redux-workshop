@@ -1,35 +1,25 @@
-extends ~layouts/single_column
+extends ~layouts/columns
 
 block title
     | Jump right into react
 
 block content
+    +slide_column().l-column-middle
+        .dm-fragment
+            +code('You\'ll need node version >= 4', 'bash', 'block')
+                | > node -v
+                | v6.9.5
 
-    | You'll need node version >= 4
-    +code(null, 'bash', 'block')
-        | > node -v
-        | v6.9.5
+        +fragment()
+            +code('Install create-react-app package globally', 'bash', 'block')
+                | > npm install -g create-react-app
 
-    +fragment()
-        :markdown-it
-            Install `create-react-app` package globally
+        +fragment()
+            +code('Create a new app', 'bash', 'block')
+                | > create-react-app react-workshop
+                | Creating a new React app...
+                | Happy hacking!
 
-        +code(null, 'bash', 'block')
-            | > npm install -g create-react-app
-
-    +fragment()
-        +code_block()
-        :markdown-it
-            Create a new app using `create-react-app APP_NAME`
-
-        +code(null, 'bash', 'block')
-            | > create-react-app react-workshop
-            | Creating a new React app...
-            | Happy hacking!
-
-    +fragment()
-        :markdown-it
-            Start the application
-
-        +code(null, 'bash', 'block')
-            | > npm start
+        +fragment()
+            +code('Start the application', 'bash', 'block')
+                | > npm start

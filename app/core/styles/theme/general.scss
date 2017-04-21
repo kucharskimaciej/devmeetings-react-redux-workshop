@@ -1,5 +1,6 @@
-body, html {
-  font-size: $font-size-base;
+body, html, .dm-slide {
+  font-size: $fz-base;
+  color: $black-rock;
 }
 
 *, *:after, *:before {

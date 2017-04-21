@@ -1,0 +1,17 @@
+mixin code(filename, lang, type)
+    if !lang
+        - lang = 'javascript'
+
+    if !type
+        - type = 'view'
+
+    - cls = lang
+    if type == 'view'
+        - cls += ' hljs'
+
+    pre(class='dm-code dm-code--' + type)
+        if filename
+            strong.dm-code__filename !{filename}
+        code.dm-code__editor(class=cls)
+            block
+

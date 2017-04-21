@@ -1,24 +1,37 @@
-extends ~layouts/single_column
+extends ~layouts/columns
 
 block title
-    | Tasks
+    | Module #1 Tasks
 
 block content
-    :markdown-it
-        *Hint*: Focus on basic tasks first. They are essential for next iteration.
+    +slide_column()
+        +message_box('Hint', 'hint')
+            div Focus on basic tasks first. They are essential for next iteration.
+            div Make sure your code works. Don't prioritize HTML & CSS over React.
+            div If you get stuck, ask your group or one of the mentors for help.
 
-        *Hint*: Make sure your code works. Don't prioritize HTML & CSS over React.
+        +task('basic')
+            | Install node and create-react-app
 
-        *Hint*: If you get stuck, ask your group or one of the mentors for help.
+        +task('basic')
+            | Create a new application
+
+        +task('basic')
+            | Remove auto-generated code from the src directory
+
+            +message_box(null, 'inside-box-hint')
+                | Don't remove code from `src/index.js`, it's fine.
+
+        +task('basic')
+            | Create a simple component that displays a user contact
+
+            +message_box(null, 'inside-box-hint')
+                | A contact should have name, phone number, e-mail address and address.
+                | Consider using
+                |
+                a(href='https://randomuser.me/' target='_blank') randomuser.me
+                |
+                | for user data
 
 
-        1. [basic] Install `node` and `create-react-app`
-        2. [basic] Create a new application
-        3. [basic] Remove auto-generated code from the `src` directory
 
-            *Hint*: don't remove code from `src/index.js`, it's fine.
-        4. [basic] Create a simple component that displays a user contact
-
-            *Hint*: a contact should have name, phone number, e-mail address and address.
-
-            *Hint*: Consider using `https://randomuser.me/`

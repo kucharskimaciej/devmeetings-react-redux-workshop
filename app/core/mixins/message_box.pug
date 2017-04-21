@@ -1,0 +1,9 @@
+mixin message_box(title, type)
+    if !type
+        - type = 'general'
+
+    article(class='dm-message-box dm-message-box--' + type + ' ' + attributes.class)
+        if title
+            header.dm-message-box__title= title
+        .dm-message-box__body
+            block

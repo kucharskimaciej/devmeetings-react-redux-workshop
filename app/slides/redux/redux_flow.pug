@@ -1,24 +1,25 @@
-extends ~layouts/split
+extends ~layouts/columns
 
 block title
     | Redux in a nutshell
 
-block content_left
-    +fragment()
-        h4 Store
-        p Holds current application state
+block content
+    +slide_column().l-column-middle
+        +fragment()
+            h3: code store
+            p Holds current application state
 
-    +fragment()
-        h4 Action
-        p An object that may result in change of state
+        +fragment()
+            h3: code action
+            p An object that may result in change of state
 
-    +fragment()
-        h4 store#dispatch(action)
-        p Notifies the store about an action
+        +fragment()
+            h3: code store#dispatch(action)
+            p Notifies the store about an action
 
-    +fragment()
-        h4 Reducer
-        p A function that gets called for every action and returns new application state accordingly
+        +fragment()
+            h3: code reducer
+            p A function that gets called for every action and returns new application state accordingly
 
-block content_right
-    | todo: redux data-flow graph
+    +slide_column()
+        | todo: redux data-flow graph

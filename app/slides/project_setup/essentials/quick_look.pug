@@ -4,19 +4,20 @@ block title
     | Quick look around the project
 
 block content
-    +slide_column(30)
+    +slide_column(30).l-column-middle
         img(src=require('slides/project_setup/essentials/project.png'))
 
-    +slide_column()
-        h3 App.js
+    +slide_column().l-column-middle
+        +fragment()
+            :markdown-it
+                ### `App.js`
 
-        :markdown-it
-            The initial component. Note the capital 'A' in the name - this is by convention.
+                The initial component. Note the capital 'A' in the name - this is by convention.
+                The `App` component is exported from the file using the `export default` statement at the bottom.
 
-            The `App` component is exported from the file using the `export default` statement at the bottom.
+        +fragment()
+            :markdown-it
+                ### `index.js`
 
-        h3 index.js
-
-        :markdown-it
-            Imports the `App` component and bootstraps it to the `#root` element.
-            This will only happen to the main component of the application - all other components will be rendered (directly or indirectly) by `App`.
+                Imports the `App` component and bootstraps it to the `#root` element.
+                This will only happen to the main component of the application - all other components will be rendered (directly or indirectly) by `App`.

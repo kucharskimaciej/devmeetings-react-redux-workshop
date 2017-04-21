@@ -5,9 +5,9 @@ block title
 
 block content
 
-    +slide_column()
+    +slide_column(50).l-column-middle
         img(src=require('slides/redux/introduction/component_communication.png'))
-
+    +slide_column().l-column-middle
         +fragment().current-only
             :markdown-it
                 The last example could be modified to showcase the bi-directional communication between two components:

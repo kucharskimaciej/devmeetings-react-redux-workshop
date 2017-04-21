@@ -1,41 +1,42 @@
-extends ~layouts/split
+extends ~layouts/columns
 
 block title
     | Reducer
 
-block content_left
-    +code('src/reducer.js', 'javascript')
-        include:escape ./reducer.jsx
+block content
+    +slide_column()
+        +code('src/reducer.js', 'javascript')
+            include:escape ./reducer.jsx
 
-block content_right
-    p Reducers are called by Redux every time an action is dispatched
+        +fragment().current-only
+            | Reducers are called by Redux every time an action is dispatched
 
-    +code_fragment('1')
-        :markdown-it
-            Reducer is just a function.
-            It is important that it is a **pure function** (a function that has no side-effects):
-            it should always return new state object and not change anything outside of the function
+        +code_focus('1').current-only
+            :markdown-it
+                Reducer is just a function.
+                It is important that it is a **pure function** (a function that has no side-effects):
+                it should always return new state object and not change anything outside of the function
 
-    +code_fragment('1')
-        :markdown-it
-            It takes two arguments: the current state and the dispatched action
+        +code_focus('1').current-only
+            :markdown-it
+                It takes two arguments: the current state and the dispatched action
 
-    +code_fragment('1')
-        :markdown-it
-            Initially there will be no state, so the default value is provided
+        +code_focus('1').current-only
+            :markdown-it
+                Initially there will be no state, so the default value is provided
 
-    +code_fragment('2-11')
-        :markdown-it
-            Every relevant action will be handled in this swtich statement depending on it's type
+        +code_focus('2-11').current-only
+            :markdown-it
+                Every relevant action will be handled in this swtich statement depending on it's type
 
-    +code_fragment('3-4')
-        :markdown-it
-            The `DEPOSIT` action will increase the balance by a certain amount.
+        +code_focus('3-4').current-only
+            :markdown-it
+                The `DEPOSIT` action will increase the balance by a certain amount.
 
-            The origial state is not modified here; a new object is returned instead.
+                The origial state is not modified here; a new object is returned instead.
 
-    +code_fragment('9-10')
-        :markdown-it
-            In case the action that has been dispatched
-            doesn't match any action handler defined in this reducer,
-            the current state will be returned by default.
+        +code_focus('9-10').current-only
+            :markdown-it
+                In case the action that has been dispatched
+                doesn't match any action handler defined in this reducer,
+                the current state will be returned by default.

@@ -1,18 +1,26 @@
 extends ~layouts/columns
 
 block title
-    | Tasks
+    | Module #5 Tasks
 
 block content
     +slide_column()
-        :markdown-it
-            1. [basic] Setup Redux: create store, wrap the application in `Provider`, and `connect` main component
+        +task('basic')
+            :markdown-it
+                Setup Redux: create store, wrap the application in `Provider`, and `connect` main component
 
-            2. [basic] All contacts should be kept in the store
+        +task('basic')
+            | Move all contacts data to the store
 
-            3. [basic] Add the ability to mark a contact as favourite
+        +task('basic')
+            | Add the ability to mark a contact as favourite
 
-            4. [advanced] Add the ability to remove contacts
+        +task('optional')
+            | Mark some contacts as favourites and show them on separate list
 
-            5. [advanced] Add the ability to add new contacts
+        +task('optional')
+            | Add the ability to remove contacts
+
+        +task('optional')
+            | Add the ability to add new contacts
 

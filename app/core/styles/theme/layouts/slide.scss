@@ -1,14 +1,32 @@
 .dm-slide {
   height: 100%;
 
-  &__content-wrapper {
+  .dm-slide__title {
+    padding: 0 1rem;
+
+    text-align: left;
+
+    font-family: $ff-base;
+    font-weight: $fw-black;
+
+    font-size: rem(72px);
+    line-height: $lh-extra-condensed;
+
+    margin-bottom: $lh-condensed-computed;
+  }
+
+  .dm-slide__content-wrapper {
     height: 100%;
     display: flex;
     flex-direction: column;
   }
 
-  &__content {
+  .dm-slide__content {
     height: 100%;
-    padding-bottom: 90px;
+    padding-top: rem(30px);
+    margin-top: rem(-30px);
+    padding-bottom: rem(90px);
+
+    overflow-y: auto;
   }
 }

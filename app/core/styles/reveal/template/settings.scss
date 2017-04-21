@@ -2,7 +2,7 @@
 // overridden by the super-theme
 
 // Background of the presentation
-$backgroundColor: #2b2b2b;
+$backgroundColor: #f1f1f1;
 
 // Primary/body text
 $mainFont: 'Lato', sans-serif;
@@ -40,4 +40,5 @@ $selectionColor: #fff;
 // to return a background image or gradient
 @mixin bodyBackground() {
 	background: $backgroundColor;
+	background-image: url('~public/core/images/slide_background.png');
 }

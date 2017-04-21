@@ -8,19 +8,19 @@ block content
         +code('src/App.js', 'javascript')
             include:escape ./app.jsx
 
-    +slide_column()
-        +code_fragment('25-33').current-only
+    +slide_column().l-column-middle
+        +code_focus('25-33').current-only
             :markdown-it
                 Use the `Array.map` method to iterate over product and create JSX for each of them
 
-        +code_fragment('29-30').current-only
+        +code_focus('29-30').current-only
             :markdown-it
                 Render the `ProductTile` component. Current product will passed to the component as `item`.
 
-        +code_fragment('29-30').current-only
+        +code_focus('29-30').current-only
             :markdown-it
                 There's a new property: `key`. It's used by React to distinguish objects and should be unique in the list.
 
-        +code_fragment('1').current-only
+        +code_focus('1').current-only
             :markdown-it
                 Remember to import the `ProductTile` component

@@ -1,0 +1,15 @@
+.dm-slide .dm-fragment {
+  display: block;
+  max-width: 80%;
+  width: 100%;
+  margin: 0 auto $lh-normal-computed;
+
+  font-size: 1rem;
+  font-family: $ff-fancy;
+
+  code {
+    display: inline-block;
+    padding: 0 rem(3px);
+    color: $royal-blue;
+  }
+}

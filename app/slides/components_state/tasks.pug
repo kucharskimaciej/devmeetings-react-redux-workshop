@@ -1,14 +1,18 @@
-extends ~layouts/single_column
+extends ~layouts/columns
 
 block title
-    | Tasks
+    | Module #3 Tasks
 
 block content
-    :markdown-it
+    +slide_column()
+        +task('basic')
+            | Add searching the contacts by name
 
-        1. [basic] Add searching the contacts by name
-        2. [basic] Change search to include all fields
-        3. [optional] Add button to sort the contacts alphabetically. Clicking it should toggle sorting direction.
-        4. [optional] Add an icon the the button (↑/↓) to indicate sorting direction.
+        +task('basic')
+            | Change search to include all fields
 
+        +task('optional')
+            | Add button to sort the contacts alphabetically. Clicking it should toggle sorting direction.
 
+        +task('optional')
+            | Add an icon the the button (↑/↓) to indicate sorting direction.
