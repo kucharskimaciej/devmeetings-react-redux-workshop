@@ -1,14 +1,13 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><link href="bundle_2abfbff71328283e82bb80720b9517d0.css" rel="stylesheet"></head><body><div class="reveal"><div class="slides"><section class="dm-slide dm-slide--title-page"><div class="dm-slide__content-wrapper"><h1 class="dm-slide__title">Intro to React<small class="dm-slide__title__subtitle">Get started with React and build your first component</small></h1></div></section><section class="dm-slide dm-slide--single-column"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Jump right into react</h3><div class="dm-slide__content">You'll need node version >= 4<pre class="dm-code dm-code--block"><code class="dm-code__editor hljs bash">> node -v
-v6.9.5</code></pre><span class="fragment dm-fragment"><p>Install <code>create-react-app</code> package globally</p>
-<pre class="dm-code dm-code--block"><code class="dm-code__editor hljs bash">> npm install -g create-react-app</code></pre></span><span class="fragment dm-fragment"><div class="dm-code-block"><div class="dm-code-block__code"></div></div><p>Create a new app using <code>create-react-app APP_NAME</code></p>
-<pre class="dm-code dm-code--block"><code class="dm-code__editor hljs bash">> create-react-app react-workshop
+<!DOCTYPE html><html><head><meta charset="utf-8"><link href="bundle_f50463432cdefd9676aff2802ecef68f.css" rel="stylesheet"></head><body><div class="reveal"><div class="slides"><section class="dm-slide dm-slide--title-page"><div class="dm-slide__content-wrapper"><h1 class="dm-slide__title">Intro to React<small class="dm-slide__title__subtitle">Get started with React and build your first component</small></h1></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Jump right into react</h3><div class="dm-slide__content"><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="dm-fragment"><pre class="dm-code dm-code--block"><strong class="dm-code__filename">You'll need node version &gt;= 4</strong><code class="dm-code__editor hljs bash">> node -v
+v6.9.5</code></pre></div><div class="fragment dm-fragment"><pre class="dm-code dm-code--block"><strong class="dm-code__filename">Install create-react-app package globally</strong><code class="dm-code__editor hljs bash">> npm install -g create-react-app</code></pre></div><div class="fragment dm-fragment"><pre class="dm-code dm-code--block"><strong class="dm-code__filename">Create a new app</strong><code class="dm-code__editor hljs bash">> create-react-app react-workshop
 Creating a new React app...
-Happy hacking!</code></pre></span><span class="fragment dm-fragment"><p>Start the application</p>
-<pre class="dm-code dm-code--block"><code class="dm-code__editor hljs bash">> npm start</code></pre></span></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Quick look around the project</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:30%;flex-basis:30%;"><img src="75c947fbbfe7d5e36b5013da663419c2.png"></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><h3>App.js</h3><p>The initial component. Note the capital 'A' in the name - this is by convention.</p>
-<p>The <code>App</code> component is exported from the file using the <code>export default</code> statement at the bottom.</p>
-<h3>index.js</h3><p>Imports the <code>App</code> component and bootstraps it to the <code>#root</code> element.
+Happy hacking!</code></pre></div><div class="fragment dm-fragment"><pre class="dm-code dm-code--block"><strong class="dm-code__filename">Start the application</strong><code class="dm-code__editor hljs bash">> npm start</code></pre></div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Quick look around the project</h3><div class="dm-slide__content"><div class="dm-slide__content__column l-column-middle" style="min-width:30%;flex-basis:30%;"><img src="75c947fbbfe7d5e36b5013da663419c2.png"></div><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="fragment dm-fragment"><h3><code>App.js</code></h3>
+<p>The initial component. Note the capital 'A' in the name - this is by convention.
+The <code>App</code> component is exported from the file using the <code>export default</code> statement at the bottom.</p>
+</div><div class="fragment dm-fragment"><h3><code>index.js</code></h3>
+<p>Imports the <code>App</code> component and bootstraps it to the <code>#root</code> element.
 This will only happen to the main component of the application - all other components will be rendered (directly or indirectly) by <code>App</code>.</p>
-</div></div></div></section><section class="dm-slide dm-slide--split"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Just a function</h3><div class="dm-slide__content"><div class="dm-slide__content__column"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/App.js</strong><code class="dm-code__editor hljs javascript">import React from &#39;react&#39;
+</div></div></div></div></section><section class="dm-slide dm-slide--split"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Just a function</h3><div class="dm-slide__content"><div class="dm-slide__content__column"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/App.js</strong><code class="dm-code__editor hljs javascript">import React from &#39;react&#39;
 
 function App() {
     return (
@@ -17,13 +16,13 @@ function App() {
 }
 
 export default App
-</code></pre><span class="current-only fragment dm-code-fragment" data-code-focus="1"><p>Even though we are not using the <code>React</code> variable directly, it has to be included to use the JSX syntax</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="3-7"><p>Most common React components are just simple functions that return some markup</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="5">return JSX</span><span class="current-only fragment dm-code-fragment" data-code-focus="9"><p>Make sure the function is exported from the file, so we can use it in other files.</p>
-</span></div><div class="dm-slide__content__column"><img src="10faf78bd6576ac1953df14025045c2d.png"></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Just a function</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:65%;flex-basis:65%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/App.js</strong><code class="dm-code__editor hljs javascript">function App() {
+</code></pre><div class="current-only fragment dm-code-focus" data-code-focus="1"><p>Even though we are not using the <code>React</code> variable directly, it has to be included to use the JSX syntax</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="3-7"><p>Most common React components are just simple functions that return some markup</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="5">return JSX</div><div class="current-only fragment dm-code-focus" data-code-focus="9"><p>Make sure the function is exported from the file, so we can use it in other files.</p>
+</div></div><div class="dm-slide__content__column"><img src="10faf78bd6576ac1953df14025045c2d.png"></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Just a function</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:65%;flex-basis:65%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/App.js</strong><code class="dm-code__editor hljs javascript">function App() {
     const product = {
       name: &quot;JavaScript: The Definitive Guide&quot;,
-      description: `Since 1996, JavaScript: The Definitive Guide has been the bible for JavaScript programmers.`,
+      description: `Since 1996, JavaScript: The Definitive Guide...`,
       price: 28.89
     }
 
@@ -42,44 +41,27 @@ export default App
     )
 }
 
-</code></pre><span class="current-only fragment dm-code-fragment" data-code-focus="2-6"><p>We are hardcoding the product data in the function</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="9-18"><p>It's important that the component returns just one HTML element in the top-level. Any more than that and React will throw an error.</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="12"><p>Any javascript in the curly braces (<code>{ code }</code>) will be evaluated.</p>
-</span></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><img src="3a3846d7394098862e934ce8550d6ead.png"></div></div></div></section><section class="dm-slide dm-slide--single-column"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Tasks</h3><div class="dm-slide__content"><p><em>Hint</em>: Focus on basic tasks first. They are essential for next iteration.</p>
-<p><em>Hint</em>: Make sure your code works. Don't prioritize HTML &amp; CSS over React.</p>
-<p><em>Hint</em>: If you get stuck, ask your group or one of the mentors for help.</p>
-<ol>
-<li>
-<p>[basic] Install <code>node</code> and <code>create-react-app</code></p>
-</li>
-<li>
-<p>[basic] Create a new application</p>
-</li>
-<li>
-<p>[basic] Remove auto-generated code from the <code>src</code> directory</p>
-<p><em>Hint</em>: don't remove code from <code>src/index.js</code>, it's fine.</p>
-</li>
-<li>
-<p>[basic] Create a simple component that displays a user contact</p>
-<p><em>Hint</em>: a contact should have name, phone number, e-mail address and address.</p>
-<p><em>Hint</em>: Consider using <code>https://randomuser.me/</code></p>
-</li>
-</ol>
-</div></div></section><section class="dm-slide dm-slide--title-page"><div class="dm-slide__content-wrapper"><h1 class="dm-slide__title">Components and props</h1></div></section><!-- parent-child--><!-- split stuff into components--><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">List of products</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:70%;flex-basis:70%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/App.js</strong><code class="dm-code__editor hljs javascript">function App() {
+</code></pre><div class="current-only fragment dm-code-focus" data-code-focus="2-6"><p>We are hardcoding the product data in the function</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="9-18"><p>It's important that the component returns just one HTML element in the top-level. Any more than that and React will throw an error.</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="13-17"><p>Any javascript in the curly braces (<code>{ code }</code>) will be evaluated.</p>
+</div></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><img src="3a3846d7394098862e934ce8550d6ead.png"></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Module #1 Tasks</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><article class="dm-message-box dm-message-box--hint undefined"><header class="dm-message-box__title">Hint</header><div class="dm-message-box__body"><div>Focus on basic tasks first. They are essential for next iteration.</div><div>Make sure your code works. Don't prioritize HTML & CSS over React.</div><div>If you get stuck, ask your group or one of the mentors for help.</div></div></article><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Install node and create-react-app</div></article><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Create a new application</div></article><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Remove auto-generated code from the src directory<article class="dm-message-box dm-message-box--inside-box-hint undefined"><div class="dm-message-box__body">Don't remove code from `src/index.js`, it's fine.</div></article></div></article><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Create a simple component that displays a user contact<article class="dm-message-box dm-message-box--inside-box-hint undefined"><div class="dm-message-box__body">A contact should have name, phone number, e-mail address and address.
+Consider using
+<a href="https://randomuser.me/" target="_blank">randomuser.me</a>
+for user data</div></article></div></article></div></div></div></section><section class="dm-slide dm-slide--title-page"><div class="dm-slide__content-wrapper"><h1 class="dm-slide__title">Components and props</h1></div></section><!-- parent-child--><!-- split stuff into components--><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">List of products</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:70%;flex-basis:70%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/App.js</strong><code class="dm-code__editor hljs javascript">function App() {
     const products = [
         {
           name: &quot;JavaScript: The Definitive Guide&quot;,
-          description: `Since 1996, JavaScript: The Definitive Guide has been the bible...`,
+          description: `Since 1996, JavaScript: The Definitive Guide...`,
           price: 28.89
         },
         {
           name: &quot;Eloquent JavaScript&quot;,
-          description: `JavaScript lies at the heart of almost every modern web application, from social apps to the newest browser-based games.`,
+          description: `JavaScript lies at the heart...`,
           price: 21.22
         },
         {
           name: &quot;JavaScript: The Good Parts&quot;,
-          description: `Most programming languages contain good and bad parts, but JavaScript...`,
+          description: `Most programming languages...`,
           price: 16.59
         }
     ]
@@ -99,9 +81,9 @@ export default App
         &lt;/section&gt;
     )
 }
-</code></pre><span class="current-only fragment dm-code-fragment" data-code-focus="2-19"><p>Instead of one product our model is now a list of products</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="23-31"><p>Use the <code>Array.map</code> method to iterate over product and create JSX for each of them</p>
-</span></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><img src="601e6d238a7983fa13583dcb054d82bd.png"></div></div></div></section><section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Desired API</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:65%;flex-basis:65%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/App.js</strong><code class="dm-code__editor hljs javascript">import ProductTile from &#39;./components/Product.js&#39;
+</code></pre><div class="current-only fragment dm-code-focus" data-code-focus="2-19"><p>Instead of one product our model is now a list of products</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="23-31"><p>Use the <code>Array.map</code> method to iterate over product and create JSX for each of them</p>
+</div></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><img src="601e6d238a7983fa13583dcb054d82bd.png"></div></div></div></section><section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Desired API</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:65%;flex-basis:65%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/App.js</strong><code class="dm-code__editor hljs javascript">import ProductTile from &#39;./components/Product.js&#39;
 
 function App() {
     const products = [
@@ -135,11 +117,11 @@ function App() {
         &lt;/section&gt;
     )
 }
-</code></pre></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><span class="current-only fragment dm-code-fragment" data-code-focus="25-33"><p>Use the <code>Array.map</code> method to iterate over product and create JSX for each of them</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="29-30"><p>Render the <code>ProductTile</code> component. Current product will passed to the component as <code>item</code>.</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="29-30"><p>There's a new property: <code>key</code>. It's used by React to distinguish objects and should be unique in the list.</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="1"><p>Remember to import the <code>ProductTile</code> component</p>
-</span></div></div></div></section><section class="dm-slide dm-slide--single-column"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">What makes a good `key`?</h3><div class="dm-slide__content"></div></div></section></section><section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Single product component</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:60%;flex-basis:60%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/App.js</strong><code class="dm-code__editor hljs javascript">import React from &#39;react&#39;
+</code></pre></div><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="current-only fragment dm-code-focus" data-code-focus="25-33"><p>Use the <code>Array.map</code> method to iterate over product and create JSX for each of them</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="29-30"><p>Render the <code>ProductTile</code> component. Current product will passed to the component as <code>item</code>.</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="29-30"><p>There's a new property: <code>key</code>. It's used by React to distinguish objects and should be unique in the list.</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="1"><p>Remember to import the <code>ProductTile</code> component</p>
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;">What makes a good `key`?</div></h3><div class="dm-slide__content"></div></div></section></section><section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Single product component</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:60%;flex-basis:60%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/App.js</strong><code class="dm-code__editor hljs javascript">import React from &#39;react&#39;
 
 function ProductTile({ item }) {
     return (
@@ -154,21 +136,15 @@ function ProductTile({ item }) {
 }
 
 export default ProductTile
-</code></pre></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><span class="current-only fragment dm-code-fragment" data-code-focus="3-13"><p>The component is simple enough to be a function</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="3"><p>This function will recieve a <code>props</code> object as first argument.
+</code></pre></div><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="current-only fragment dm-code-focus" data-code-focus="3-13"><p>The component is simple enough to be a function</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="3"><p>This function will recieve a <code>props</code> object as first argument.
 Keys of this object will map directly to attribute names used by the parent:</p>
 <pre><code class="language-js">   &lt;ProductTile item={ product } /&gt;
 </code></pre>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="3"><p>Destructuring the <code>props</code> object in functional components is one of the most common patterns in React</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="1"><p>The React lib has to be included in every file that uses JSX</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="15"><p>Export the component function so that it can be used elswhere</p>
-</span></div></div></div></section></section><section class="dm-slide dm-slide--single-column"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Tasks</h3><div class="dm-slide__content"><ol>
-<li>[basic] Create a single contact component</li>
-<li>[basic] Create a component for list of products</li>
-<li>[optional] Add tags to the contact component</li>
-<li>[optional] Mark some contacts as favourites and show them on separate list</li>
-</ol>
-</div></div></section><section class="dm-slide dm-slide--title-page"><div class="dm-slide__content-wrapper"><h1 class="dm-slide__title">Components with state</h1></div></section><section class="dm-slide dm-slide--single-column"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Component as Class</h3><div class="dm-slide__content"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/App.js</strong><code class="dm-code__editor hljs javascript">import React, { Component } from &#39;react&#39;
+</div><div class="current-only fragment dm-code-focus" data-code-focus="3"><p>Destructuring the <code>props</code> object in functional components is one of the most common patterns in React</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="1"><p>The React lib has to be included in every file that uses JSX</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="15"><p>Export the component function so that it can be used elswhere</p>
+</div></div></div></div></section></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Module #2 Tasks</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Create a single contact component</div></article><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Create a component for list of products</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Add tags to the contact component</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Mark some contacts as favourites and show them on separate list</div></article></div></div></div></section><section class="dm-slide dm-slide--title-page"><div class="dm-slide__content-wrapper"><h1 class="dm-slide__title">Components with state</h1></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Component as Class</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/App.js</strong><code class="dm-code__editor hljs javascript">import React, { Component } from &#39;react&#39;
 
 class ClassComponent extends Component {
     title = &#39;React: DevMeetings Workshop&#39;
@@ -181,13 +157,13 @@ class ClassComponent extends Component {
 }
 
 export default ClassComponent
-</code></pre><span class="current-only fragment dm-code-fragment" data-code-focus="1"><p>Import the <code>Component</code> base class from <code>react</code></p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="3-11"><p>Use class instead of a function to define the component</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="3"><p>The class must extend <code>Component</code></p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="6-10"><p>Code responsible for rendering the component will be in the <code>render</code> method</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="4"><p>The class may have some data or additional funcitons attached to it</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="8"><p><code>this</code> represents a specific instance of the ClassComponent</p>
-</span></div></div></section><section class="dm-slide dm-slide--split"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Handling events</h3><div class="dm-slide__content"><div class="dm-slide__content__column"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/App.js</strong><code class="dm-code__editor hljs javascript">import React, { Component } from &#39;react&#39;
+</code></pre></div><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="current-only fragment dm-code-focus" data-code-focus="1"><p>Import the <code>Component</code> base class from <code>react</code></p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="3-11"><p>Use class instead of a function to define the component</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="3"><p>The class must extend <code>Component</code></p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="6-10"><p>Code responsible for rendering the component will be in the <code>render</code> method</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="4"><p>The class may have some data or additional funcitons attached to it</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="8"><p><code>this</code> represents a specific instance of the ClassComponent</p>
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Handling events</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:65%;flex-basis:65%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/App.js</strong><code class="dm-code__editor hljs javascript">import React, { Component } from &#39;react&#39;
 
 class Clicker extends Component {
     handleButtonClick = (event) =&gt; {
@@ -202,12 +178,12 @@ class Clicker extends Component {
 }
 
 export default Clicker
-</code></pre><span class="current-only fragment dm-code-fragment" data-code-focus="3"><p>Use class component to have access to instance methods and fields</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="4-6"><p>Define the handler</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="10"><p>All handlers are assigned via the <code>onEventName</code> attribute</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="10"><p>Do not execute the hander here, just pass it in</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="5"><p>Use <code>event.target</code> to find out which button has been clicked in case you have many of them</p>
-</span></div><div class="dm-slide__content__column"><img src="34455281e241b0321c18025e2067faf8.gif"></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Stateful components</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:60%;flex-basis:60%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/App.js</strong><code class="dm-code__editor hljs javascript">import React, { Component } from &#39;react&#39;
+</code></pre></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><img class="l-mbn" src="34455281e241b0321c18025e2067faf8.gif"><div class="current-only fragment dm-code-focus" data-code-focus="3"><p>Use class component to have access to instance methods and fields</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="4-6"><p>Define the handler</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="10"><p>All handlers are assigned via the <code>onEventName</code> attribute</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="10"><p>Do not execute the hander here, just pass it in</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="5"><p>Use <code>event.target</code> to find out which button has been clicked in case you have many of them</p>
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Stateful components</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:60%;flex-basis:60%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/App.js</strong><code class="dm-code__editor hljs javascript">import React, { Component } from &#39;react&#39;
 
 class CounterClicker extends Component {
     state = {
@@ -230,14 +206,14 @@ class CounterClicker extends Component {
 }
 
 export default CounterClicker
-</code></pre></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><img src="5636d71cbf478a4609b270bdbb6bec92.gif"><span class="current-only fragment dm-code-fragment" data-code-focus="4-6"><p>Component state is always kept in a property called <code>state</code>.
+</code></pre></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><img class="l-mbn" src="5636d71cbf478a4609b270bdbb6bec92.gif"><div class="current-only fragment dm-code-focus" data-code-focus="4-6"><p>Component state is always kept in a property called <code>state</code>.
 <code>state</code> and <code>props</code> are the only properites that React watches for changes.</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="4-6"><p>Define initial component state.
+</div><div class="current-only fragment dm-code-focus" data-code-focus="4-6"><p>Define initial component state.
 This is the only place where you write to the state property directly</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="17"><p>Display data from the state</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="9-11"><p>Modify the state using the <code>setState</code> method. <code>this.state = ...</code> will not work.</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="8-12"><p>Arrow function is used to bind <code>this</code> correctly to the component instance</p>
-</span></div></div></div></section><section><section class="dm-slide dm-slide--single-column"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Loading data from server</h3><div class="dm-slide__content"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/App.js</strong><code class="dm-code__editor hljs javascript">class AsyncList extends Component {
+</div><div class="current-only fragment dm-code-focus" data-code-focus="17"><p>Display data from the state</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="9-11"><p>Modify the state using the <code>setState</code> method. <code>this.state = ...</code> will not work.</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="8-12"><p>Arrow function is used to bind <code>this</code> correctly to the component instance</p>
+</div></div></div></div></section><section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Loading data from server</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/App.js</strong><code class="dm-code__editor hljs javascript">class AsyncList extends Component {
     componentDidMount() {
         API.loadPosts()
             .then(posts =&gt; this.setState({ posts }))
@@ -253,34 +229,28 @@ This is the only place where you write to the state property directly</p>
         return &lt;p&gt;Loading...&lt;/p&gt;;
     }
 }
-</code></pre><span class="current-only fragment dm-code-fragment" data-code-focus="3-4"><p>Instead of posts being hardcoded in the component, they will be fetched from the server</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="2-5"><p>Side effects like Ajax requests are best placed in the <code>componentDidMount</code> lifecycle hook</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="8-12"><p>If the posts are loaded (the <code>posts</code> property exists on state) the list will be shown</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="14"><p>Otherwise the component will render a loading indicator.</p>
-</span></div></div></section><section class="dm-slide dm-slide--single-column"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Lifecycle hooks</h3><div class="dm-slide__content"><h3>componentWillMount</h3>
+</code></pre><div class="current-only fragment dm-code-focus" data-code-focus="3-4"><p>Instead of posts being hardcoded in the component, they will be fetched from the server</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="2-5"><p>Side effects like Ajax requests are best placed in the <code>componentDidMount</code> lifecycle hook</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="8-12"><p>If the posts are loaded (the <code>posts</code> property exists on state) the list will be shown</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="14"><p>Otherwise the component will render a loading indicator.</p>
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Lifecycle hooks</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><div class="dm-fragment"><h3><code>componentWillMount</code></h3>
 <p>Called just before the first render. It's better to just use class constructor instead.
 It might be removed in future versions.</p>
-<h3>componentDidMount</h3>
-<p>Called after the component is rendered.
-Most useful for side effects: API calls, timers, non-React code (ie. initializing a jQuery plugin).</p>
-<h3>componentWillReceiveProps</h3>
+<h3><code>componentWillReceiveProps</code></h3>
 <p>Called with new props, before render. Changing component's state here will not trigger another render.
 Useful if the component's state is computed based on props.</p>
-<h3>shouldComponentUpdate</h3>
-<p>There are new props or new state, but maybe there is no need to render the component again. For performance tweaking.</p>
-<h3>componentWillUpdate</h3>
+<h3><code>componentWillUpdate</code></h3>
 <p>Similar to <code>componentWillReceiveProps</code>, but can't change state. Called just before render. Rarely used.</p>
-<h3>componentDidUpdate</h3>
+</div></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><div class="dm-fragment"><h3><code>componentDidMount</code></h3>
+<p>Called after the component is rendered.
+Most useful for side effects: API calls, timers, non-React code (ie. initializing a jQuery plugin).</p>
+<h3><code>shouldComponentUpdate</code></h3>
+<p>There are new props or new state, but maybe there is no need to render the component again. For performance tweaking.</p>
+<h3><code>componentDidUpdate</code></h3>
 <p>Called right after a render. Use to update DOM in response to state/props changes.</p>
-<h3>componentWillUnmount</h3>
+<h3><code>componentWillUnmount</code></h3>
 <p>Called before the component is removed. Useful for cleanup, typically compliments the <code>componentDidMount</code>.</p>
-</div></div></section></section><section class="dm-slide dm-slide--single-column"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Tasks</h3><div class="dm-slide__content"><ol>
-<li>[basic] Add searching the contacts by name</li>
-<li>[basic] Change search to include all fields</li>
-<li>[optional] Add button to sort the contacts alphabetically. Clicking it should toggle sorting direction.</li>
-<li>[optional] Add an icon the the button (↑/↓) to indicate sorting direction.</li>
-</ol>
-</div></div></section><section class="dm-slide dm-slide--title-page"><div class="dm-slide__content-wrapper"><h1 class="dm-slide__title">Routing<small class="dm-slide__title__subtitle">React Router v4</small></h1></div></section><section class="dm-slide dm-slide--split"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">First routes</h3><div class="dm-slide__content"><div class="dm-slide__content__column"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/App.js</strong><code class="dm-code__editor hljs javascript">import React from &#39;react&#39;
+</div></div></div></div></section></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Module #3 Tasks</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Add searching the contacts by name</div></article><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Change search to include all fields</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Add button to sort the contacts alphabetically. Clicking it should toggle sorting direction.</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Add an icon the the button (↑/↓) to indicate sorting direction.</div></article></div></div></div></section><section class="dm-slide dm-slide--title-page"><div class="dm-slide__content-wrapper"><h1 class="dm-slide__title">Routing<small class="dm-slide__title__subtitle">React Router v4</small></h1></div></section><section class="dm-slide dm-slide--split"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">First routes</h3><div class="dm-slide__content"><div class="dm-slide__content__column"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/App.js</strong><code class="dm-code__editor hljs javascript">import React from &#39;react&#39;
 import { BrowserRouter, Route } from &#39;react-router-dom&#39;
 
 import HomePageComponent from &#39;./components/home&#39;
@@ -300,17 +270,17 @@ function AppComponent() {
 }
 
 export default AppComponent
-</code></pre></div><div class="dm-slide__content__column"><span class="fragment dm-fragment"><p>The router needs to be installed first using:</p>
+</code></pre></div><div class="dm-slide__content__column"><div class="fragment dm-fragment"><p>The router needs to be installed first using:</p>
 <pre><code class="language-sh">npm install --save react-router-dom
 </code></pre>
 <p>in the console</p>
-</span><span class="fragment dm-code-fragment" data-code-focus="2"><p>Import components from the package. <code>BrowserRouter</code> provides routing using the HTML5 <code>historyAPI</code>
+</div><div class="fragment dm-code-focus" data-code-focus="2"><p>Import components from the package. <code>BrowserRouter</code> provides routing using the HTML5 <code>historyAPI</code>
 and <code>Route</code> represents a single page.</p>
-</span><span class="fragment dm-code-fragment" data-code-focus="9-16"><p>Routing will be available to everything that is wrapped in the <code>BrowserRouter</code> tag</p>
-</span><span class="fragment dm-code-fragment" data-code-focus="10-15"><p>Browser router takes exactly one child element</p>
-</span><span class="fragment dm-code-fragment" data-code-focus="14-15"><p>A <code>Route</code> component defines which component to display when user navigates to specified path</p>
-</span><span class="fragment dm-code-fragment" data-code-focus="11"><p>Content that is not the <code>Route</code> component will be always render</p>
-</span></div></div></div></section><section class="dm-slide dm-slide--single-column"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Adding links</h3><div class="dm-slide__content"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/App.js</strong><code class="dm-code__editor hljs javascript">import React from &#39;react&#39;
+</div><div class="fragment dm-code-focus" data-code-focus="9-16"><p>Routing will be available to everything that is wrapped in the <code>BrowserRouter</code> tag</p>
+</div><div class="fragment dm-code-focus" data-code-focus="10-15"><p>Browser router takes exactly one child element</p>
+</div><div class="fragment dm-code-focus" data-code-focus="14-15"><p>A <code>Route</code> component defines which component to display when user navigates to specified path</p>
+</div><div class="fragment dm-code-focus" data-code-focus="11"><p>Content that is not the <code>Route</code> component will be always render</p>
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Adding links</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/App.js</strong><code class="dm-code__editor hljs javascript">import React from &#39;react&#39;
 import { BrowserRouter, Route, Link } from &#39;react-router-dom&#39;
 
 import HomePageComponent from &#39;./components/home&#39;
@@ -333,49 +303,31 @@ function AppComponent() {
 }
 
 export default AppComponent
-</code></pre><span class="current-only fragment dm-code-fragment" data-code-focus="2"><p>Add the <code>Link</code> component to the list of imports</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="12-13"><p>The component will render a link with correct <code>href</code> and text.</p>
-</span></div></div></section><section class="dm-slide dm-slide--single-column"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Tasks</h3><div class="dm-slide__content"><ol>
-<li>
-<p>[basic] Setup the Router with two pages:</p>
-<ul>
-<li>home page with a title</li>
-<li>contact list page</li>
-</ul>
-</li>
-<li>
-<p>[basic] Create a menu with links that displays on both pages</p>
-</li>
-<li>
-<p>[advanced] Add styles to active links</p>
-</li>
-<li>
-<p>[advanced] Add route for a single contact page</p>
-</li>
-</ol>
-</div></div></section><section class="dm-slide dm-slide--title-page"><div class="dm-slide__content-wrapper"><h1 class="dm-slide__title">Redux<small class="dm-slide__title__subtitle">Application state management</small></h1></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Communication between components</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><img src="7a5f6e23883f24e4e9a9d3fa4716676e.png"><span class="current-only fragment dm-fragment"><p>The last example could be modified to showcase the bi-directional communication between two components:
+</code></pre><div class="current-only fragment dm-code-focus" data-code-focus="2"><p>Add the <code>Link</code> component to the list of imports</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="12-13"><p>The component will render a link with correct <code>href</code> and text.</p>
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Module #4 Tasks</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Setup the Router with two pages: home page with title and message and contact list page (the current view)</div></article><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Create navigation component with links that displays on both pages</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">The active link should be visually distinct</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Add a route for single contact page</div></article></div></div></div></section><section class="dm-slide dm-slide--title-page"><div class="dm-slide__content-wrapper"><h1 class="dm-slide__title">Redux<small class="dm-slide__title__subtitle">Application state management</small></h1></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Communication between components</h3><div class="dm-slide__content"><div class="dm-slide__content__column l-column-middle" style="min-width:50%;flex-basis:50%;"><img src="7a5f6e23883f24e4e9a9d3fa4716676e.png"></div><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="current-only fragment dm-fragment"><p>The last example could be modified to showcase the bi-directional communication between two components:
 the stateful parent (which keeps the <code>clickCount</code> in state) and a stateless child.</p>
-</span><span class="current-only fragment dm-fragment"><p>The parent component passes data (<code>clickCount</code>) down to it's children using props.</p>
-</span><span class="current-only fragment dm-fragment"><p>Alongside the data it also passes a callback (<code>onClick</code>) to enable the child to talk back.</p>
-</span><span class="current-only fragment dm-fragment"><p>What about components that are not in the parent-child relation?</p>
-</span></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Common parent</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:40%;flex-basis:40%;"><img src="c0208d811cd50d430e3663af4ea5404f.png"></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><span class="current-only fragment dm-fragment"><p>The solution is to communicate via the nearest common ancestor.</p>
-</span><span class="current-only fragment dm-fragment"><p>It's very easy when the components are close to each other...</p>
-</span><span class="current-only fragment dm-fragment"><p>...but gets harder as the distance increases.</p>
-</span></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Distant components</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><img src="58c80e0603afe11d2cab919c0bed3d72.png"><span class="current-only fragment dm-fragment"><p>For bigger component hierarchies this method becomes unmanageable.</p>
-</span><span class="current-only fragment dm-fragment"><p>The application becomes fragile, it's hard to move components around,
+</div><div class="current-only fragment dm-fragment"><p>The parent component passes data (<code>clickCount</code>) down to it's children using props.</p>
+</div><div class="current-only fragment dm-fragment"><p>Alongside the data it also passes a callback (<code>onClick</code>) to enable the child to talk back.</p>
+</div><div class="current-only fragment dm-fragment"><p>What about components that are not in the parent-child relation?</p>
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Common parent</h3><div class="dm-slide__content"><div class="dm-slide__content__column l-column-middle" style="min-width:40%;flex-basis:40%;"><img src="c0208d811cd50d430e3663af4ea5404f.png"></div><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="current-only fragment dm-fragment"><p>The solution is to communicate via the nearest common ancestor.</p>
+</div><div class="current-only fragment dm-fragment"><p>It's very easy when the components are close to each other...</p>
+</div><div class="current-only fragment dm-fragment"><p>...but gets harder as the distance increases.</p>
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Distant components</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><img class="l-mbn" src="58c80e0603afe11d2cab919c0bed3d72.png"><div class="current-only fragment dm-fragment"><p>For bigger component hierarchies this method becomes unmanageable.</p>
+</div><div class="current-only fragment dm-fragment"><p>The application becomes fragile, it's hard to move components around,
 and creating a simple interaction requires lots of code.</p>
-</span><span class="current-only fragment dm-fragment"><p>There is also another issue: central components must hold too much state and responsibility.</p>
-</span></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Separate state from UI</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><img src="7da3fb1d180546f2fce78de1684e9a1e.png"><span class="current-only fragment dm-fragment"><p>One of the solutions is to move the application state away from it's view layer (aka components).</p>
-</span><span class="current-only fragment dm-fragment"><p>All of the data will be kept in an object accesible by every component.</p>
-</span><span class="current-only fragment dm-fragment"><p>Components will be able to modify the state using events.</p>
-</span></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Principles of Redux</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:40%;flex-basis:40%;"><img src="b4e23a502e44692d9f3c8b427ac23e01.png"></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><span class="fragment dm-fragment"><h3>Single source of truth</h3>
+</div><div class="current-only fragment dm-fragment"><p>There is also another issue: central components must hold too much state and responsibility.</p>
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Separate state from UI</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><img class="l-mbn" src="7da3fb1d180546f2fce78de1684e9a1e.png"><div class="current-only fragment dm-fragment"><p>One of the solutions is to move the application state away from it's view layer (aka components).</p>
+</div><div class="current-only fragment dm-fragment"><p>All of the data will be kept in an object accesible by every component.</p>
+</div><div class="current-only fragment dm-fragment"><p>Components will be able to modify the state using events.</p>
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Principles of Redux</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:40%;flex-basis:40%;"><img src="b4e23a502e44692d9f3c8b427ac23e01.png"></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><div class="fragment dm-fragment"><h3>Single source of truth</h3>
 <p>The complete state of an application is kept in one place, which ensures no duplication or conflicts.</p>
-</span><span class="fragment dm-fragment"><h3>Predictable</h3>
+</div><div class="fragment dm-fragment"><h3>Predictable</h3>
 <p>The state can only be changed via events (actions). It makes tracking the changes very easy.</p>
-</span><span class="fragment dm-fragment"><h3>Immutable</h3>
+</div><div class="fragment dm-fragment"><h3>Immutable</h3>
 <p>The state is represented as an immutable object. Every change creates a new snapshot.
 This provides solid performance (no need to compare values!) and easy testing.</p>
-</span></div></div></div></section><section class="dm-slide dm-slide--split"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Redux in a nutshell</h3><div class="dm-slide__content"><div class="dm-slide__content__column"><span class="fragment dm-fragment"><h4>Store</h4><p>Holds current application state</p></span><span class="fragment dm-fragment"><h4>Action</h4><p>An object that may result in change of state</p></span><span class="fragment dm-fragment"><h4>store#dispatch(action)</h4><p>Notifies the store about an action</p></span><span class="fragment dm-fragment"><h4>Reducer</h4><p>A function that gets called for every action and returns new application state accordingly</p></span></div><div class="dm-slide__content__column">todo: redux data-flow graph</div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Actions</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:40%;flex-basis:40%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/actions.js</strong><code class="dm-code__editor hljs javascript">export function WithdrawAction(amount) {
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Redux in a nutshell</h3><div class="dm-slide__content"><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="fragment dm-fragment"><h3><code>store</code></h3><p>Holds current application state</p></div><div class="fragment dm-fragment"><h3><code>action</code></h3><p>An object that may result in change of state</p></div><div class="fragment dm-fragment"><h3><code>store#dispatch(action)</code></h3><p>Notifies the store about an action</p></div><div class="fragment dm-fragment"><h3><code>reducer</code></h3><p>A function that gets called for every action and returns new application state accordingly</p></div></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;">todo: redux data-flow graph</div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Actions</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:40%;flex-basis:40%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/actions.js</strong><code class="dm-code__editor hljs javascript">export function WithdrawAction(amount) {
    return {
        type: &#39;WITHDRAW&#39;,
        amount
@@ -388,11 +340,11 @@ export function DepositAction(amount) {
         amount
     }
 }
-</code></pre></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><p>Actions are the messages that tell the store there's a need to change state</p><span class="current-only fragment dm-code-fragment" data-code-focus="2-5"><p>Action is a plain JS object</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="3"><p>Action must have a <code>type</code> property</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="4"><p>Usually there is some data attached to the action.</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="8-13"><p>To avoid mistakes, like typos, action objects are returned by functions - called <strong>action creators</strong></p>
-</span></div></div></div></section><section class="dm-slide dm-slide--split"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Reducer</h3><div class="dm-slide__content"><div class="dm-slide__content__column"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/reducer.js</strong><code class="dm-code__editor hljs javascript">export default function balanceReducer(state = { balance: 0 }, action) {
+</code></pre></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><div class="fragment dm-fragment">Actions are the messages that tell the store there's a need to change state</div><div class="current-only fragment dm-code-focus" data-code-focus="2-5"><p>Action is a plain JS object</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="3"><p>Action must have a <code>type</code> property</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="4"><p>Usually there is some data attached to the action.</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="8-13"><p>To avoid mistakes, like typos, action objects are returned by functions - called <strong>action creators</strong></p>
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Reducer</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/reducer.js</strong><code class="dm-code__editor hljs javascript">export default function balanceReducer(state = { balance: 0 }, action) {
     switch (action.type) {
         case &#39;DEPOSIT&#39;:
             return { balance: state.balance + action.amount };
@@ -405,18 +357,18 @@ export function DepositAction(amount) {
     }
 }
 
-</code></pre></div><div class="dm-slide__content__column"><p>Reducers are called by Redux every time an action is dispatched</p><span class="fragment dm-code-fragment" data-code-focus="1"><p>Reducer is just a function.
+</code></pre><div class="current-only fragment dm-fragment">Reducers are called by Redux every time an action is dispatched</div><div class="current-only fragment dm-code-focus" data-code-focus="1"><p>Reducer is just a function.
 It is important that it is a <strong>pure function</strong> (a function that has no side-effects):
 it should always return new state object and not change anything outside of the function</p>
-</span><span class="fragment dm-code-fragment" data-code-focus="1"><p>It takes two arguments: the current state and the dispatched action</p>
-</span><span class="fragment dm-code-fragment" data-code-focus="1"><p>Initially there will be no state, so the default value is provided</p>
-</span><span class="fragment dm-code-fragment" data-code-focus="2-11"><p>Every relevant action will be handled in this swtich statement depending on it's type</p>
-</span><span class="fragment dm-code-fragment" data-code-focus="3-4"><p>The <code>DEPOSIT</code> action will increase the balance by a certain amount.</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="1"><p>It takes two arguments: the current state and the dispatched action</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="1"><p>Initially there will be no state, so the default value is provided</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="2-11"><p>Every relevant action will be handled in this swtich statement depending on it's type</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="3-4"><p>The <code>DEPOSIT</code> action will increase the balance by a certain amount.</p>
 <p>The origial state is not modified here; a new object is returned instead.</p>
-</span><span class="fragment dm-code-fragment" data-code-focus="9-10"><p>In case the action that has been dispatched
+</div><div class="current-only fragment dm-code-focus" data-code-focus="9-10"><p>In case the action that has been dispatched
 doesn't match any action handler defined in this reducer,
 the current state will be returned by default.</p>
-</span></div></div></div></section><section class="dm-slide dm-slide--split"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">The store</h3><div class="dm-slide__content"><div class="dm-slide__content__column"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/app.js</strong><code class="dm-code__editor hljs javascript">import { createStore } from &#39;redux&#39;
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">The store</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/app.js</strong><code class="dm-code__editor hljs javascript">import { createStore } from &#39;redux&#39;
 import { DepositAction, WithdrawAction } from &#39;./actions&#39;
 import balanceReducer from &#39;./reducer&#39;
 
@@ -431,15 +383,15 @@ store.subscribe(() =&gt; {
 store.dispatch(DepositAction(500));
 store.dispatch(DepositAction(100));
 store.dispatch(WithdrawAction(220));
-</code></pre></div><div class="dm-slide__content__column"><p>Store is the centerpiece of redux.
+</code></pre></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><div class="fragment dm-fragment">Store is the centerpiece of redux.
 It glues state, actions and reducers together.
-There will be only one store per application.</p><span class="fragment dm-code-fragment" data-code-focus="5"><p>Create the store using the <code>createStore</code> funciton from <code>redux</code>.
+There will be only one store per application.</div><div class="current-only fragment dm-code-focus" data-code-focus="5"><p>Create the store using the <code>createStore</code> funciton from <code>redux</code>.
 It takes the reducer as first argument.</p>
-</span><span class="fragment dm-code-fragment" data-code-focus="7-12"><p>Use the <code>subscribe</code> method and pass in a callback.
+</div><div class="current-only fragment dm-code-focus" data-code-focus="7-12"><p>Use the <code>subscribe</code> method and pass in a callback.
 The callback will be called after every dispatched action.</p>
-</span><span class="fragment dm-code-fragment" data-code-focus="8"><p>You can access the current application state using the <code>getState</code> method.</p>
-</span><span class="fragment dm-code-fragment" data-code-focus="13-15"><p>Use the <code>dispatch</code> method to run some actions against the store.</p>
-</span></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Using Redux with React: the setup</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:40%;flex-basis:40%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/store.js</strong><code class="dm-code__editor hljs javascript">import React from &#39;react&#39;;
+</div><div class="current-only fragment dm-code-focus" data-code-focus="8"><p>You can access the current application state using the <code>getState</code> method.</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="13-15"><p>Use the <code>dispatch</code> method to run some actions against the store.</p>
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Using Redux with React: the setup</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:50%;flex-basis:50%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/store.js</strong><code class="dm-code__editor hljs javascript">import React from &#39;react&#39;;
 import ReactDOM from &#39;react-dom&#39;;
 import { Provider } from &#39;react-redux&#39;
 import { createStore } from &#39;redux&#39;
@@ -456,10 +408,10 @@ ReactDOM.render(
         &lt;App /&gt;
     &lt;/Provider&gt;,
     document.getElementById(&#39;root&#39;)
-);</code></pre></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><span class="current-only fragment dm-code-fragment" data-code-focus="9"><p>Reducers stay exactly the same</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="11"><p>Create the store</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="14-16"><p>The <code>Provider</code> component allows access to the store for all components in the application</p>
-</span></div></div></div></section><section class="dm-slide dm-slide--split"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Connecting store and components</h3><div class="dm-slide__content"><div class="dm-slide__content__column"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/reducer.js</strong><code class="dm-code__editor hljs javascript">import React from &#39;react&#39;;
+);</code></pre></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><div class="current-only fragment dm-code-focus" data-code-focus="9"><p>Reducers stay exactly the same</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="11"><p>Create the store</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="14-16"><p>The <code>Provider</code> component allows access to the store for all components in the application</p>
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Connecting store and components</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:50%;flex-basis:50%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/reducer.js</strong><code class="dm-code__editor hljs javascript">import React from &#39;react&#39;;
 import { connect } from &#39;react-redux&#39;
 
 function AppComponent({ accountBalance }) {
@@ -477,12 +429,12 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(AppComponent);
-</code></pre></div><div class="dm-slide__content__column"><span class="fragment dm-code-fragment" data-code-focus="4-10"><p>A simple component that displays the current balance</p>
-</span><span class="fragment dm-code-fragment" data-code-focus="12-16"><p>The <code>mapStateToProps</code> function will be called everytime the application state changes.</p>
-</span><span class="fragment dm-code-fragment" data-code-focus="13-15"><p>It's job is to return props for the component.</p>
-</span><span class="fragment dm-code-fragment" data-code-focus="4"><p>The component will receive props provided by <code>mapStateToProps</code></p>
-</span><span class="fragment dm-code-fragment" data-code-focus="18"><p>Component and the function are connected via the <code>connect</code> utility from <code>react-redux</code></p>
-</span></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Dispatching actions</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/reducer.js</strong><code class="dm-code__editor hljs javascript">import React, { Component } from &#39;react&#39;
+</code></pre></div><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="current-only fragment dm-code-focus" data-code-focus="4-10"><p>A simple component that displays the current balance</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="12-16"><p>The <code>mapStateToProps</code> function will be called everytime the application state changes.</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="13-15"><p>It's job is to return props for the component.</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="4"><p>The component will receive props provided by <code>mapStateToProps</code></p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="18"><p>Component and the function are connected via the <code>connect</code> utility from <code>react-redux</code></p>
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Dispatching actions</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:50%;flex-basis:50%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/reducer.js</strong><code class="dm-code__editor hljs javascript">import React, { Component } from &#39;react&#39;
 import { connect } from &#39;react-redux&#39;
 import { DepositAction, WithdrawAction } from &#39;./actions&#39;
 
@@ -514,26 +466,10 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(AppComponent);
-</code></pre></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><span class="current-only fragment dm-code-fragment" data-code-focus="5-24"><p>A simple component that displays the current balance</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="26-30"><p>The balance is provided by <code>mapStateToProps</code> function</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="7-9"><p>Clicking a button will result in action being called</p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="8"><p>The action is created by an action creator: <code>DepositAction</code>/<code>WithdrawAction</code></p>
-</span><span class="current-only fragment dm-code-fragment" data-code-focus="8"><p>The <code>connect</code> function also provides the store's <code>dispatch</code> method in props</p>
-</span></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Tasks</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><ol>
-<li>
-<p>[basic] Setup Redux: create store, wrap the application in <code>Provider</code>, and <code>connect</code> main component</p>
-</li>
-<li>
-<p>[basic] All contacts should be kept in the store</p>
-</li>
-<li>
-<p>[basic] Add the ability to mark a contact as favourite</p>
-</li>
-<li>
-<p>[advanced] Add the ability to remove contacts</p>
-</li>
-<li>
-<p>[advanced] Add the ability to add new contacts</p>
-</li>
-</ol>
-</div></div></div></section></div></div><script type="text/javascript" src="vendor.bundle_308ee690b2d11d251a86.js"></script><script type="text/javascript" src="bundle_308ee690b2d11d251a86.js"></script></body></html>
+</code></pre></div><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="current-only fragment dm-code-focus" data-code-focus="5-24"><p>A simple component that displays the current balance</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="26-30"><p>The balance is provided by <code>mapStateToProps</code> function</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="7-9"><p>Clicking a button will result in action being called</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="8"><p>The action is created by an action creator: <code>DepositAction</code>/<code>WithdrawAction</code></p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="8"><p>The <code>connect</code> function also provides the store's <code>dispatch</code> method in props</p>
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Module #5 Tasks</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body"><p>Setup Redux: create store, wrap the application in <code>Provider</code>, and <code>connect</code> main component</p>
+</div></article><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Move all contacts data to the store</div></article><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Add the ability to mark a contact as favourite</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Mark some contacts as favourites and show them on separate list</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Add the ability to remove contacts</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Add the ability to add new contacts</div></article></div></div></div></section></div></div><script type="text/javascript" src="vendor.bundle_8df5c8b9627650b8a154.js"></script><script type="text/javascript" src="bundle_8df5c8b9627650b8a154.js"></script></body></html>
