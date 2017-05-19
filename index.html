@@ -278,7 +278,7 @@ export default AppComponent
 and <code>Route</code> represents a single page.</p>
 </div><div class="fragment dm-code-focus" data-code-focus="9-16"><p>Routing will be available to everything that is wrapped in the <code>BrowserRouter</code> tag</p>
 </div><div class="fragment dm-code-focus" data-code-focus="10-15"><p>Browser router takes exactly one child element</p>
-</div><div class="fragment dm-code-focus" data-code-focus="14-15"><p>A <code>Route</code> component defines which component to display when user navigates to specified path</p>
+</div><div class="fragment dm-code-focus" data-code-focus="14"><p>A <code>Route</code> component defines which component to display when user navigates to specified path</p>
 </div><div class="fragment dm-code-focus" data-code-focus="11"><p>Content that is not the <code>Route</code> component will be always render</p>
 </div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Adding links</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/App.js</strong><code class="dm-code__editor hljs javascript">import React from &#39;react&#39;
 import { BrowserRouter, Route, Link } from &#39;react-router-dom&#39;
@@ -305,7 +305,196 @@ function AppComponent() {
 export default AppComponent
 </code></pre><div class="current-only fragment dm-code-focus" data-code-focus="2"><p>Add the <code>Link</code> component to the list of imports</p>
 </div><div class="current-only fragment dm-code-focus" data-code-focus="12-13"><p>The component will render a link with correct <code>href</code> and text.</p>
-</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Module #4 Tasks</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Setup the Router with two pages: home page with title and message and contact list page (the current view)</div></article><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Create navigation component with links that displays on both pages</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">The active link should be visually distinct</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Add a route for single contact page</div></article></div></div></div></section><section class="dm-slide dm-slide--title-page"><div class="dm-slide__content-wrapper"><h1 class="dm-slide__title">Redux<small class="dm-slide__title__subtitle">Application state management</small></h1></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Communication between components</h3><div class="dm-slide__content"><div class="dm-slide__content__column l-column-middle" style="min-width:50%;flex-basis:50%;"><img src="7a5f6e23883f24e4e9a9d3fa4716676e.png"></div><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="current-only fragment dm-fragment"><p>The last example could be modified to showcase the bi-directional communication between two components:
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Module #4 Tasks</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Setup the Router with two pages: home page with title and message and contact list page (the current view)</div></article><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Create navigation component with links that displays on both pages</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">The active link should be visually distinct</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Add a route for single contact page</div></article></div></div></div></section><section class="dm-slide dm-slide--title-page"><div class="dm-slide__content-wrapper"><h1 class="dm-slide__title">Forms</h1></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Controlled inputs</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:60%;flex-basis:60%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/Form.js</strong><code class="dm-code__editor hljs javascript">import React, { Component } from &#39;react&#39;
+
+class ControlledInputExample extends Component {
+    state = {
+        value: &#39;&#39;
+    }
+
+    onInputChange = (event) =&gt; {
+        this.setState({
+            value: event.target.value
+        })
+    }
+
+    render() {
+        return (
+            &lt;input type=&quot;text&quot;
+                   value={this.state.value}
+                   onChange={this.onInputChange} /&gt;
+        )
+    }
+}
+
+export default ControlledInputExample
+</code></pre></div><div class="dm-slide__content__column l-column-middle" style="min-width:40%;flex-basis:40%;"><div class="current-only fragment dm-code-focus" data-code-focus="16-18"><p>This input is controlled: it's value bound some value provided by React</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="16-18"><p>This means the input is essentialy read-only unless we change the value via React</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="8-12"><p>The value is changed via <code>setState</code></p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="4-6"><p>Input value shouldn't be undefined, provide the initial value</p>
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Controlled inputs</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:60%;flex-basis:60%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/Form.js</strong><code class="dm-code__editor hljs javascript">import React, { Component } from &#39;react&#39;
+
+
+class MultipleInputsExample extends Component {
+    state = {
+        name: &#39;&#39;,
+        price: &#39;&#39;
+    }
+
+    onInputChange = ({target}) =&gt; {
+        const value = target.value;
+        const name = target.name;
+
+        this.setState({
+            [name]: value
+        });
+    }
+
+    render() {
+        return (
+            &lt;section&gt;
+                &lt;div&gt;
+                    &lt;label htmlFor=&quot;name&quot;&gt;Product name&lt;/label&gt;
+                    &lt;input type=&quot;text&quot; id=&quot;name&quot;
+                           name=&quot;name&quot;
+                           value={this.state.name}
+                           onChange={this.onInputChange} /&gt;
+                &lt;/div&gt;
+
+                &lt;div&gt;
+                    &lt;label htmlFor=&quot;price&quot;&gt;Product price&lt;/label&gt;
+                    &lt;input type=&quot;number&quot; id=&quot;price&quot;
+                           name=&quot;price&quot;
+                           value={this.state.price}
+                           onChange={this.onInputChange} /&gt;
+                &lt;/div&gt;
+            &lt;/section&gt;
+        )
+    }
+}
+
+export default MultipleInputsExample
+</code></pre></div><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="current-only fragment dm-code-focus" data-code-focus="21-38"><p>There are two controlled components this time.
+Both are calling the <code>onInputChange</code> function on user's input.</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="24-27"><p>The input has a <code>name</code> attribute to identify it.</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="23"><p>Instead of using standard <code>for</code> attribute, labels are using <code>htmlFor</code>.
+It still has to match the input's <code>id</code>.</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="5-8"><p>All values are initialized in the state and the keys match field names.
+Caveat: The <code>value</code> attribute is always a string.</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="11-16"><p>The function has become more generic.</p>
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Submitting the form</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:50%;flex-basis:50%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/Form.js</strong><code class="dm-code__editor hljs javascript">class FormSubmitExample extends Component {
+    state = {
+        name: &#39;&#39;
+    }
+
+    onSubmit = (event) =&gt; {
+        event.preventDefault();
+        console.log(`Hello, ${this.state.name}!`);
+    }
+
+    render() {
+        return (
+            &lt;form onSubmit={this.onSubmit}&gt;
+                &lt;div&gt;
+                    &lt;label htmlFor=&quot;name&quot;&gt;Product name&lt;/label&gt;
+                    &lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;name&quot; value={this.state.name} onChange={this.onInputChange} /&gt;
+                &lt;/div&gt;
+                &lt;footer&gt;
+                    &lt;button&gt;Submit!&lt;/button&gt;
+                &lt;/footer&gt;
+            &lt;/form&gt;
+        )
+    }
+
+    onInputChange = ({target}) =&gt; {
+        const value = target.value;
+
+        this.setState({
+            name: value
+        });
+    }
+}</code></pre></div><div class="dm-slide__content__column l-column-middle" style="min-width:50%;flex-basis:50%;"><div class="current-only fragment dm-code-focus" data-code-focus="13"><p>Much like with inputs, the <code>submit</code> event is handled via the <code>onSubmit</code> callback</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="6-9"><p>The method recieves the submittion event.</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="7"><p>If the default behavior is not prevented, the page will reload. Not good!</p>
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Form validation</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:50%;flex-basis:50%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/Form.js</strong><code class="dm-code__editor hljs javascript">class FormValidationExample extends Component {
+    state = {
+        name: &#39;&#39;,
+        price: &#39;&#39;,
+        errors: {}
+    }
+
+    onInputChange = ({target}) =&gt; {
+        const value = target.value;
+        const name = target.name;
+
+        const errors = {
+            ...this.state.errors,
+            [name]: validate(name, value)
+        };
+
+        this.setState({
+            [name]: value,
+            errors
+        });
+    }
+
+    onSubmit = (event) =&gt; {
+        event.preventDefault();
+    }
+
+    render() {
+        return (
+            &lt;form onSubmit={this.onSubmit}&gt;
+                &lt;div&gt;
+                    &lt;label htmlFor=&quot;name&quot;&gt;Product name&lt;/label&gt;
+                    &lt;input type=&quot;text&quot; id=&quot;name&quot;
+                           name=&quot;name&quot;
+                           value={this.state.name}
+                           onChange={this.onInputChange} /&gt;
+                    { this.state.errors.name &amp;&amp;
+                        &lt;span&gt;{this.state.errors.name}&lt;/span&gt; }
+                &lt;/div&gt;
+
+                &lt;div&gt;
+                    &lt;label htmlFor=&quot;price&quot;&gt;Product price&lt;/label&gt;
+                    &lt;input type=&quot;number&quot; id=&quot;price&quot;
+                           name=&quot;price&quot;
+                           value={this.state.price}
+                           onChange={this.onInputChange} /&gt;
+                    { this.state.errors.price &amp;&amp;
+                        &lt;span&gt;{this.state.errors.price}&lt;/span&gt; }
+                &lt;/div&gt;
+
+                &lt;footer&gt;
+                    &lt;button&gt;Submit&lt;/button&gt;
+                &lt;/footer&gt;
+            &lt;/form&gt;
+        )
+    }
+}</code></pre></div><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="current-only fragment dm-code-focus" data-code-focus="5"><p>Component state contains the <code>errors</code> field</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="36-37"><p>Displays the error for given field if it's present</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="12-15"><p>Merge (potential) error into the existing list of errors.</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="17-20"><p>Update the state with both value and errors.</p>
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Simple Validation function</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:50%;flex-basis:50%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/Form.js</strong><code class="dm-code__editor hljs javascript">function validate(field, value) {
+    switch (field) {
+        case &#39;name&#39;:
+            if (!value) {
+                return `Can&#39;t be blank`;
+            }
+            break;
+        case &#39;price&#39;:
+            if (value &lt;= 0) {
+                return `Must be greater than 0`
+            }
+            break;
+    }
+
+    return null;
+}
+</code></pre></div><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="current-only fragment dm-code-focus" data-code-focus="1-16"><p>Either in the same scope or imported to the component</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="15"><p>Returns <code>null</code> when there are no errors for the field</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="5"><p>Returns an error when the field is invalid</p>
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Module #5 Tasks</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Create a "New Contact" form<article class="dm-message-box dm-message-box--inside-box-hint undefined"><div class="dm-message-box__body">Should have fields for name, phone, e-mail and address. It's enough to `console.log` the data on submit.</div></article></div></article><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Add simple validation - all fields are required</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Add the contact to the list on submit</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Add more complex validation - validate e-mail address and zip code.</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Prevent submitting the form while there are errors</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Improve UI: validate fields on blur, validate the whole form on submit</div></article></div></div></div></section><section class="dm-slide dm-slide--title-page"><div class="dm-slide__content-wrapper"><h1 class="dm-slide__title">Redux<small class="dm-slide__title__subtitle">Application state management</small></h1></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Communication between components</h3><div class="dm-slide__content"><div class="dm-slide__content__column l-column-middle" style="min-width:50%;flex-basis:50%;"><img src="7a5f6e23883f24e4e9a9d3fa4716676e.png"></div><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="current-only fragment dm-fragment"><p>The last example could be modified to showcase the bi-directional communication between two components:
 the stateful parent (which keeps the <code>clickCount</code> in state) and a stateless child.</p>
 </div><div class="current-only fragment dm-fragment"><p>The parent component passes data (<code>clickCount</code>) down to it's children using props.</p>
 </div><div class="current-only fragment dm-fragment"><p>Alongside the data it also passes a callback (<code>onClick</code>) to enable the child to talk back.</p>
@@ -471,5 +660,4 @@ export default connect(mapStateToProps)(AppComponent);
 </div><div class="current-only fragment dm-code-focus" data-code-focus="7-9"><p>Clicking a button will result in action being called</p>
 </div><div class="current-only fragment dm-code-focus" data-code-focus="8"><p>The action is created by an action creator: <code>DepositAction</code>/<code>WithdrawAction</code></p>
 </div><div class="current-only fragment dm-code-focus" data-code-focus="8"><p>The <code>connect</code> function also provides the store's <code>dispatch</code> method in props</p>
-</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Module #5 Tasks</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body"><p>Setup Redux: create store, wrap the application in <code>Provider</code>, and <code>connect</code> main component</p>
-</div></article><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Move all contacts data to the store</div></article><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Add the ability to mark a contact as favourite</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Mark some contacts as favourites and show them on separate list</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Add the ability to remove contacts</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Add the ability to add new contacts</div></article></div></div></div></section></div></div><script type="text/javascript" src="vendor.bundle_8771b121703f140795df.js"></script><script type="text/javascript" src="bundle_8771b121703f140795df.js"></script></body></html>
+</div></div></div></div></section><!--include ./tasks--></div></div><script type="text/javascript" src="vendor.bundle_e2cacb6121b5e0e42d3b.js"></script><script type="text/javascript" src="bundle_e2cacb6121b5e0e42d3b.js"></script></body></html>
