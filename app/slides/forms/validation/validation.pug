@@ -1,0 +1,26 @@
+extends ~layouts/columns
+
+block title
+    | Form validation
+
+block content
+    +slide_column(50)
+        +code('src/Form.js', 'javascript')
+            include:escape ./validation.jsx
+
+    +slide_column().l-column-middle
+        +code_focus('5').current-only
+            :markdown-it
+                Component state contains the `errors` field
+
+        +code_focus('36-37').current-only
+            :markdown-it
+                Displays the error for given field if it's present
+
+        +code_focus('12-15').current-only
+            :markdown-it
+                Merge (potential) error into the existing list of errors.
+
+        +code_focus('17-20').current-only
+            :markdown-it
+                Update the state with both value and errors.

@@ -1,0 +1,22 @@
+extends ~layouts/columns
+
+block title
+    | Simple Validation function
+
+block content
+    +slide_column(50)
+        +code('src/Form.js', 'javascript')
+            include:escape ./validator.jsx
+
+    +slide_column().l-column-middle
+        +code_focus('1-16').current-only
+            :markdown-it
+                Either in the same scope or imported to the component
+
+        +code_focus('15').current-only
+            :markdown-it
+                Returns `null` when there are no errors for the field
+
+        +code_focus('5').current-only
+            :markdown-it
+                Returns an error when the field is invalid

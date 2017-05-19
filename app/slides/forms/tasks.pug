@@ -1,0 +1,26 @@
+extends ~layouts/columns
+
+block title
+    | Module #5 Tasks
+
+block content
+    +slide_column()
+        +task('basic')
+            | Create a "New Contact" form
+            +message_box(null, 'inside-box-hint')
+                | Should have fields for name, phone, e-mail and address. It's enough to `console.log` the data on submit.
+
+        +task('basic')
+            | Add simple validation - all fields are required
+
+        +task('optional')
+            | Add the contact to the list on submit
+
+        +task('optional')
+            | Add more complex validation - validate e-mail address and zip code.
+
+        +task('optional')
+            | Prevent submitting the form while there are errors
+
+        +task('optional')
+            | Improve UI: validate fields on blur, validate the whole form on submit

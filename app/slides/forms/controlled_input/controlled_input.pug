@@ -1,0 +1,26 @@
+extends ~layouts/columns
+
+block title
+    | Controlled inputs
+
+block content
+    +slide_column(60)
+        +code('src/Form.js', 'javascript')
+            include:escape ./controlled_input_example.jsx
+
+    +slide_column(40).l-column-middle
+        +code_focus('16-18').current-only
+            :markdown-it
+                This input is controlled: it's value bound some value provided by React
+
+        +code_focus('16-18').current-only
+            :markdown-it
+                This means the input is essentialy read-only unless we change the value via React
+
+        +code_focus('8-12').current-only
+            :markdown-it
+                The value is changed via `setState`
+
+        +code_focus('4-6').current-only
+            :markdown-it
+                Input value shouldn't be undefined, provide the initial value

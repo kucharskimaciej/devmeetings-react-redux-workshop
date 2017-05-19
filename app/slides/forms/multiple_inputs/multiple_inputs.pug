@@ -1,0 +1,33 @@
+extends ~layouts/columns
+
+block title
+    | Controlled inputs
+
+block content
+    +slide_column(60)
+        +code('src/Form.js', 'javascript')
+            include:escape ./multiple_inputs.jsx
+
+    +slide_column().l-column-middle
+        +code_focus('21-38').current-only
+            :markdown-it
+                There are two controlled components this time.
+                Both are calling the `onInputChange` function on user's input.
+
+        +code_focus('24-27').current-only
+            :markdown-it
+                The input has a `name` attribute to identify it.
+
+        +code_focus('23').current-only
+            :markdown-it
+                Instead of using standard `for` attribute, labels are using `htmlFor`.
+                It still has to match the input's `id`.
+
+        +code_focus('5-8').current-only
+            :markdown-it
+                All values are initialized in the state and the keys match field names.
+                Caveat: The `value` attribute is always a string.
+
+        +code_focus('11-16').current-only
+            :markdown-it
+                The function has become more generic.

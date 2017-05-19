@@ -1,0 +1,22 @@
+extends ~layouts/columns
+
+block title
+    | Submitting the form
+
+block content
+    +slide_column(50)
+        +code('src/Form.js', 'javascript')
+            include:escape ./form_submit.jsx
+
+    +slide_column(50).l-column-middle
+        +code_focus('13').current-only
+            :markdown-it
+                Much like with inputs, the `submit` event is handled via the `onSubmit` callback
+
+        +code_focus('6-9').current-only
+            :markdown-it
+                The method recieves the submittion event.
+
+        +code_focus('7').current-only
+            :markdown-it
+                If the default behavior is not prevented, the page will reload. Not good!
