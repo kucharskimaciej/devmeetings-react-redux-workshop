@@ -1,4 +1,190 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><link href="bundle_f50463432cdefd9676aff2802ecef68f.css" rel="stylesheet"></head><body><div class="reveal"><div class="slides"><section class="dm-slide dm-slide--title-page"><div class="dm-slide__content-wrapper"><h1 class="dm-slide__title">Intro to React<small class="dm-slide__title__subtitle">Get started with React and build your first component</small></h1></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Jump right into react</h3><div class="dm-slide__content"><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="dm-fragment"><pre class="dm-code dm-code--block"><strong class="dm-code__filename">You'll need node version &gt;= 4</strong><code class="dm-code__editor hljs bash">> node -v
+<!DOCTYPE html><html><head><meta charset="utf-8"><link href="bundle_f50463432cdefd9676aff2802ecef68f.css" rel="stylesheet"></head><body><div class="reveal"><div class="slides"><section class="dm-slide dm-slide--title-page"><div class="dm-slide__content-wrapper"><h1 class="dm-slide__title">Refresh the Javascript<small class="dm-slide__title__subtitle">That you will need for React</small></h1></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Transform one array into another using map</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:60%;flex-basis:60%;"><pre class="dm-code dm-code--view"><code class="dm-code__editor hljs javascript">const array = [1, 2, 3, 4, 5]
+
+function squareNumber(num) {
+    return num * num
+}
+
+const squared = array.map(squareNumber)
+
+squared // [1, 4, 9, 16, 25]
+array // [1, 2, 3, 4, 5]
+
+
+const doubled = array.map(function(num) { return num * 2 }) // [2, 4, 6, 8, 10]
+
+
+const books = [
+    {
+        name: &quot;JavaScript: The Definitive Guide&quot;,
+        description: `Since 1996, JavaScript: The Definitive Guide...`,
+        price: 28.89
+    },
+    {
+        name: &quot;Eloquent JavaScript&quot;,
+        description: `JavaScript lies at the heart...`,
+        price: 21.22
+    },
+    {
+        name: &quot;JavaScript: The Good Parts&quot;,
+        description: `Most programming languages...`,
+        price: 16.59
+    }
+]
+
+const titles = books.map(function(book) {
+    return book.name;
+})
+
+titles // [&quot;JavaScript: The Definitive Guide&quot;, &quot;Eloquent JavaScript&quot;, &quot;JavaScript: The Good Parts&quot;]
+
+</code></pre></div><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="current-only fragment dm-code-focus" data-code-focus="3-5"><p>The <code>squareNumber</code> function takes in a number and returs its square</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="7"><p>With <code>map</code> the <code>squareNumber</code> will be called for each item in <code>array</code></p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="9"><p>Return values of <code>squareNumber</code> form a new array</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="10"><p>The original array remains unchanged</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="13"><p>The function used in map can be inlined</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="16-32"><p>It works on objects, too; or any other value as long as it is in an array</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="34-36"><p>Map over the <code>books</code> array...</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="35"><p>...for every <code>book</code> return its <code>name</code></p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="38"><p>The <code>titles</code> is an array of strings.</p>
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">.filter - Only take items that match some condition</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:60%;flex-basis:60%;"><pre class="dm-code dm-code--view"><code class="dm-code__editor hljs javascript">const array = [1, 2, 3, 4, 5]
+
+function biggerThan3(num) {
+    return num &gt; 3;
+}
+
+const selectedNumbers = array.filter(biggerThan3)
+
+selectedNumbers // [4, 5]
+array // [1, 2, 3, 4, 5]
+
+const books = [
+    {
+        name: &quot;JavaScript: The Definitive Guide&quot;,
+        description: `Since 1996, JavaScript: The Definitive Guide...`,
+        price: 28.89
+    },
+    {
+        name: &quot;Eloquent JavaScript&quot;,
+        description: `JavaScript lies at the heart...`,
+        price: 21.22
+    },
+    {
+        name: &quot;JavaScript: The Good Parts&quot;,
+        description: `Most programming languages...`,
+        price: 16.59
+    }
+]
+
+const expensiveBooks = books.filter(function(book) {
+    return book.price &gt; 20;
+})
+
+const titlesOfExpensiveBooks = books
+    .filter(function(book) { return book.price &gt; 20 })
+    .map(function(book) { return book.name });
+
+titlesOfExpensiveBooks // [&quot;JavaScript: The Definitive Guide&quot;, &quot;Eloquent JavaScript&quot;]
+
+</code></pre></div><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="current-only fragment dm-code-focus" data-code-focus="3-5"><p>The <code>biggerThan3</code> function takes in a number and returs true when it's bigger than 3</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="7"><p>With <code>filter</code> the <code>biggerThan3</code> will be called for each item in <code>array</code></p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="9"><p><code>selectedNumbers</code> is an array that contains all the numbers that the <code>biggerThan3</code> has returned <code>true</code> for.</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="10"><p>The original array remains unchanged</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="12-28"><p>Just like <code>map</code> it can be called on any array</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="30-32"><p>Filter the <code>books</code> array to create <code>expensiveBooks</code> array that only includes those with price greater than $20.</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="34-36"><p><code>map</code> and <code>filter</code> can be chained</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="35"><p>Find all books that match the <code>book.price &gt; 20</code> condition...</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="36"><p>...only take their titles</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="38"><p><code>titlesOfExpensiveBooks</code> contains the names of books over $20</p>
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Arrow functions</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:60%;flex-basis:60%;"><pre class="dm-code dm-code--view"><code class="dm-code__editor hljs javascript">const square = (num) =&gt; {
+    return num * num
+}
+
+const sqaure2 = num =&gt; num * num;
+
+[1, 2, 3].map(x =&gt; x - 2)
+
+
+
+</code></pre></div><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="current-only fragment dm-code-focus" data-code-focus="1-3"><p>It is just a new syntax for writing functions; drop the <code>function</code> keyword and add <code>=&gt;</code> (arrow) symbol.</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="5"><p>If the arrow function takes just one argument the parenthesis can be dropped</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="5"><p>If it has just one line, the <code>return</code> keyword and brackets can be dropped</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="1-5"><p>Functions <code>square</code> and <code>square2</code> are exactly the same</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="7"><p>It can be used in any context: eg. callback</p>
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Arrow functions: about `this`</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:60%;flex-basis:60%;"><pre class="dm-code dm-code--view"><code class="dm-code__editor hljs javascript">const user = {
+    name: &#39;John&#39;,
+    greeting() {
+        console.log(this.name)
+    },
+    delayedGreeting() {
+        setTimeout(function() {
+            console.log(this.name)
+        });
+    }
+}
+
+user.greeting() // &quot;John&quot;
+user.delayedGreeting() // error! `this` is undefined
+
+user.delayedGreeting = function() {
+    setTimeout(() =&gt; {
+        console.log(this.name)
+    })
+}
+
+user.delayedGreeting() // &quot;John&quot;</code></pre></div><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="current-only fragment dm-code-focus" data-code-focus="1-11"><p><code>this</code> is a tricky subject in JS. Take this simple object as an example</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="13"><p><code>user.greeting()</code> returns <code>&quot;John&quot;</code>, as expected</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="14"><p>There's another function inside the <code>delayedGreeting</code>: the <code>setTimeout</code> callback.
+That causes <code>this</code> to be undefined and results in an error.</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="16-20"><p>Solution: use the arrow function syntax for the callback. It will bind the <code>this</code> to the user object.</p>
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Classes</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:60%;flex-basis:60%;"><pre class="dm-code dm-code--view"><code class="dm-code__editor hljs javascript">class Shape {
+    type = &#39;shape&#39;
+
+    constructor(description) {
+        this.description = description
+    }
+
+    draw() {
+        console.log(`${this.type}: ${this.description}`)
+    }
+
+    dimensions() {
+        console.log(&#39;None&#39;)
+    }
+}
+
+const myShape = new Shape(&#39;random blob&#39;);
+myShape.draw() // &#39;shape: random blob&#39;
+myShape.dimensions() // &#39;None&#39;
+
+class Circle extends Shape {
+    type = &#39;circle&#39;
+
+    constructor(description, radius) {
+        super(description);
+        this.radius = radius;
+    }
+
+    dimensions() {
+        console.log(`Radius: ${this.radius}`)
+    }
+}
+
+const circle = new Circle(&#39;Round!&#39;, 10);
+circle.draw() // &#39;circle: Round!&#39;
+circle.dimensions() // &#39;Radius: 10&#39;
+</code></pre></div><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="current-only fragment dm-code-focus" data-code-focus="1-15"><p>Class is a blueprint used to create an object. Objects created using a class are called that class' instances</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="2"><p>Classes can have properties</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="4-6"><p>There is a special function called <code>constructor</code> that will be called everytime a new instance is created</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="8-10"><p>Classes can define functions - called methods. Every instance will have access to methods.</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="9"><p><code>this</code> used in method refers to specific instance</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="17"><p>New instances are created using <code>new</code>. <code>myShape</code> is an instance of <code>Shape</code> class.</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="18-19"><p>It has access to methods defined on class.</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="21-32"><p>Classes can extend other classes. In this case <code>Circle</code> extends <code>Shape</code> class.
+In other words: <code>Circle</code> is a type of <code>Shape</code>.</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="29-31"><p><code>Circle</code> overrides - defines its own - <code>dimensions</code> method. Same goes for <code>type</code> property.</p>
+</div><div class="current-only fragment dm-code-focus" data-code-focus="29-31"><p><code>Circle</code> defines its own <code>constructor</code>.
+But since it <code>extends</code> another class it has to call <code>super</code> function first.</p>
+</div></div></div></div></section><section class="dm-slide dm-slide--title-page"><div class="dm-slide__content-wrapper"><h1 class="dm-slide__title">Intro to React<small class="dm-slide__title__subtitle">Get started with React and build your first component</small></h1></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Jump right into react</h3><div class="dm-slide__content"><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="dm-fragment"><pre class="dm-code dm-code--block"><strong class="dm-code__filename">You'll need node version &gt;= 4</strong><code class="dm-code__editor hljs bash">> node -v
 v6.9.5</code></pre></div><div class="fragment dm-fragment"><pre class="dm-code dm-code--block"><strong class="dm-code__filename">Install create-react-app package globally</strong><code class="dm-code__editor hljs bash">> npm install -g create-react-app</code></pre></div><div class="fragment dm-fragment"><pre class="dm-code dm-code--block"><strong class="dm-code__filename">Create a new app</strong><code class="dm-code__editor hljs bash">> create-react-app react-workshop
 Creating a new React app...
 Happy hacking!</code></pre></div><div class="fragment dm-fragment"><pre class="dm-code dm-code--block"><strong class="dm-code__filename">Start the application</strong><code class="dm-code__editor hljs bash">> npm start</code></pre></div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Quick look around the project</h3><div class="dm-slide__content"><div class="dm-slide__content__column l-column-middle" style="min-width:30%;flex-basis:30%;"><img src="75c947fbbfe7d5e36b5013da663419c2.png"></div><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="fragment dm-fragment"><h3><code>App.js</code></h3>
@@ -305,196 +491,7 @@ function AppComponent() {
 export default AppComponent
 </code></pre><div class="current-only fragment dm-code-focus" data-code-focus="2"><p>Add the <code>Link</code> component to the list of imports</p>
 </div><div class="current-only fragment dm-code-focus" data-code-focus="12-13"><p>The component will render a link with correct <code>href</code> and text.</p>
-</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Module #4 Tasks</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Setup the Router with two pages: home page with title and message and contact list page (the current view)</div></article><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Create navigation component with links that displays on both pages</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">The active link should be visually distinct</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Add a route for single contact page</div></article></div></div></div></section><section class="dm-slide dm-slide--title-page"><div class="dm-slide__content-wrapper"><h1 class="dm-slide__title">Forms</h1></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Controlled inputs</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:60%;flex-basis:60%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/Form.js</strong><code class="dm-code__editor hljs javascript">import React, { Component } from &#39;react&#39;
-
-class ControlledInputExample extends Component {
-    state = {
-        value: &#39;&#39;
-    }
-
-    onInputChange = (event) =&gt; {
-        this.setState({
-            value: event.target.value
-        })
-    }
-
-    render() {
-        return (
-            &lt;input type=&quot;text&quot;
-                   value={this.state.value}
-                   onChange={this.onInputChange} /&gt;
-        )
-    }
-}
-
-export default ControlledInputExample
-</code></pre></div><div class="dm-slide__content__column l-column-middle" style="min-width:40%;flex-basis:40%;"><div class="current-only fragment dm-code-focus" data-code-focus="16-18"><p>This input is controlled: it's value bound some value provided by React</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="16-18"><p>This means the input is essentialy read-only unless we change the value via React</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="8-12"><p>The value is changed via <code>setState</code></p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="4-6"><p>Input value shouldn't be undefined, provide the initial value</p>
-</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Controlled inputs</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:60%;flex-basis:60%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/Form.js</strong><code class="dm-code__editor hljs javascript">import React, { Component } from &#39;react&#39;
-
-
-class MultipleInputsExample extends Component {
-    state = {
-        name: &#39;&#39;,
-        price: &#39;&#39;
-    }
-
-    onInputChange = ({target}) =&gt; {
-        const value = target.value;
-        const name = target.name;
-
-        this.setState({
-            [name]: value
-        });
-    }
-
-    render() {
-        return (
-            &lt;section&gt;
-                &lt;div&gt;
-                    &lt;label htmlFor=&quot;name&quot;&gt;Product name&lt;/label&gt;
-                    &lt;input type=&quot;text&quot; id=&quot;name&quot;
-                           name=&quot;name&quot;
-                           value={this.state.name}
-                           onChange={this.onInputChange} /&gt;
-                &lt;/div&gt;
-
-                &lt;div&gt;
-                    &lt;label htmlFor=&quot;price&quot;&gt;Product price&lt;/label&gt;
-                    &lt;input type=&quot;number&quot; id=&quot;price&quot;
-                           name=&quot;price&quot;
-                           value={this.state.price}
-                           onChange={this.onInputChange} /&gt;
-                &lt;/div&gt;
-            &lt;/section&gt;
-        )
-    }
-}
-
-export default MultipleInputsExample
-</code></pre></div><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="current-only fragment dm-code-focus" data-code-focus="21-38"><p>There are two controlled components this time.
-Both are calling the <code>onInputChange</code> function on user's input.</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="24-27"><p>The input has a <code>name</code> attribute to identify it.</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="23"><p>Instead of using standard <code>for</code> attribute, labels are using <code>htmlFor</code>.
-It still has to match the input's <code>id</code>.</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="5-8"><p>All values are initialized in the state and the keys match field names.
-Caveat: The <code>value</code> attribute is always a string.</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="11-16"><p>The function has become more generic.</p>
-</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Submitting the form</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:50%;flex-basis:50%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/Form.js</strong><code class="dm-code__editor hljs javascript">class FormSubmitExample extends Component {
-    state = {
-        name: &#39;&#39;
-    }
-
-    onSubmit = (event) =&gt; {
-        event.preventDefault();
-        console.log(`Hello, ${this.state.name}!`);
-    }
-
-    render() {
-        return (
-            &lt;form onSubmit={this.onSubmit}&gt;
-                &lt;div&gt;
-                    &lt;label htmlFor=&quot;name&quot;&gt;Product name&lt;/label&gt;
-                    &lt;input type=&quot;text&quot; id=&quot;name&quot; name=&quot;name&quot; value={this.state.name} onChange={this.onInputChange} /&gt;
-                &lt;/div&gt;
-                &lt;footer&gt;
-                    &lt;button&gt;Submit!&lt;/button&gt;
-                &lt;/footer&gt;
-            &lt;/form&gt;
-        )
-    }
-
-    onInputChange = ({target}) =&gt; {
-        const value = target.value;
-
-        this.setState({
-            name: value
-        });
-    }
-}</code></pre></div><div class="dm-slide__content__column l-column-middle" style="min-width:50%;flex-basis:50%;"><div class="current-only fragment dm-code-focus" data-code-focus="13"><p>Much like with inputs, the <code>submit</code> event is handled via the <code>onSubmit</code> callback</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="6-9"><p>The method recieves the submittion event.</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="7"><p>If the default behavior is not prevented, the page will reload. Not good!</p>
-</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Form validation</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:50%;flex-basis:50%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/Form.js</strong><code class="dm-code__editor hljs javascript">class FormValidationExample extends Component {
-    state = {
-        name: &#39;&#39;,
-        price: &#39;&#39;,
-        errors: {}
-    }
-
-    onInputChange = ({target}) =&gt; {
-        const value = target.value;
-        const name = target.name;
-
-        const errors = {
-            ...this.state.errors,
-            [name]: validate(name, value)
-        };
-
-        this.setState({
-            [name]: value,
-            errors
-        });
-    }
-
-    onSubmit = (event) =&gt; {
-        event.preventDefault();
-    }
-
-    render() {
-        return (
-            &lt;form onSubmit={this.onSubmit}&gt;
-                &lt;div&gt;
-                    &lt;label htmlFor=&quot;name&quot;&gt;Product name&lt;/label&gt;
-                    &lt;input type=&quot;text&quot; id=&quot;name&quot;
-                           name=&quot;name&quot;
-                           value={this.state.name}
-                           onChange={this.onInputChange} /&gt;
-                    { this.state.errors.name &amp;&amp;
-                        &lt;span&gt;{this.state.errors.name}&lt;/span&gt; }
-                &lt;/div&gt;
-
-                &lt;div&gt;
-                    &lt;label htmlFor=&quot;price&quot;&gt;Product price&lt;/label&gt;
-                    &lt;input type=&quot;number&quot; id=&quot;price&quot;
-                           name=&quot;price&quot;
-                           value={this.state.price}
-                           onChange={this.onInputChange} /&gt;
-                    { this.state.errors.price &amp;&amp;
-                        &lt;span&gt;{this.state.errors.price}&lt;/span&gt; }
-                &lt;/div&gt;
-
-                &lt;footer&gt;
-                    &lt;button&gt;Submit&lt;/button&gt;
-                &lt;/footer&gt;
-            &lt;/form&gt;
-        )
-    }
-}</code></pre></div><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="current-only fragment dm-code-focus" data-code-focus="5"><p>Component state contains the <code>errors</code> field</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="36-37"><p>Displays the error for given field if it's present</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="12-15"><p>Merge (potential) error into the existing list of errors.</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="17-20"><p>Update the state with both value and errors.</p>
-</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Simple Validation function</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:50%;flex-basis:50%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/Form.js</strong><code class="dm-code__editor hljs javascript">function validate(field, value) {
-    switch (field) {
-        case &#39;name&#39;:
-            if (!value) {
-                return `Can&#39;t be blank`;
-            }
-            break;
-        case &#39;price&#39;:
-            if (value &lt;= 0) {
-                return `Must be greater than 0`
-            }
-            break;
-    }
-
-    return null;
-}
-</code></pre></div><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="current-only fragment dm-code-focus" data-code-focus="1-16"><p>Either in the same scope or imported to the component</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="15"><p>Returns <code>null</code> when there are no errors for the field</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="5"><p>Returns an error when the field is invalid</p>
-</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Module #5 Tasks</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Create a "New Contact" form<article class="dm-message-box dm-message-box--inside-box-hint undefined"><div class="dm-message-box__body">Should have fields for name, phone, e-mail and address. It's enough to `console.log` the data on submit.</div></article></div></article><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Add simple validation - all fields are required</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Add the contact to the list on submit</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Add more complex validation - validate e-mail address and zip code.</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Prevent submitting the form while there are errors</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Improve UI: validate fields on blur, validate the whole form on submit</div></article></div></div></div></section><section class="dm-slide dm-slide--title-page"><div class="dm-slide__content-wrapper"><h1 class="dm-slide__title">Redux<small class="dm-slide__title__subtitle">Application state management</small></h1></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Communication between components</h3><div class="dm-slide__content"><div class="dm-slide__content__column l-column-middle" style="min-width:50%;flex-basis:50%;"><img src="7a5f6e23883f24e4e9a9d3fa4716676e.png"></div><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="current-only fragment dm-fragment"><p>The last example could be modified to showcase the bi-directional communication between two components:
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Module #4 Tasks</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Setup the Router with two pages: home page with title and message and contact list page (the current view)</div></article><article class="dm-task dm-task--basic undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Create navigation component with links that displays on both pages</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">The active link should be visually distinct</div></article><article class="dm-task dm-task--optional undefined"><div class="dm-task__difficulty"></div><div class="dm-task__body">Add a route for single contact page</div></article></div></div></div></section><!--include slides/forms/index--><section class="dm-slide dm-slide--title-page"><div class="dm-slide__content-wrapper"><h1 class="dm-slide__title">Redux<small class="dm-slide__title__subtitle">Application state management</small></h1></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Communication between components</h3><div class="dm-slide__content"><div class="dm-slide__content__column l-column-middle" style="min-width:50%;flex-basis:50%;"><img src="7a5f6e23883f24e4e9a9d3fa4716676e.png"></div><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="current-only fragment dm-fragment"><p>The last example could be modified to showcase the bi-directional communication between two components:
 the stateful parent (which keeps the <code>clickCount</code> in state) and a stateless child.</p>
 </div><div class="current-only fragment dm-fragment"><p>The parent component passes data (<code>clickCount</code>) down to it's children using props.</p>
 </div><div class="current-only fragment dm-fragment"><p>Alongside the data it also passes a callback (<code>onClick</code>) to enable the child to talk back.</p>
@@ -516,148 +513,4 @@ and creating a simple interaction requires lots of code.</p>
 </div><div class="fragment dm-fragment"><h3>Immutable</h3>
 <p>The state is represented as an immutable object. Every change creates a new snapshot.
 This provides solid performance (no need to compare values!) and easy testing.</p>
-</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Redux in a nutshell</h3><div class="dm-slide__content"><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="fragment dm-fragment"><h3><code>store</code></h3><p>Holds current application state</p></div><div class="fragment dm-fragment"><h3><code>action</code></h3><p>An object that may result in change of state</p></div><div class="fragment dm-fragment"><h3><code>store#dispatch(action)</code></h3><p>Notifies the store about an action</p></div><div class="fragment dm-fragment"><h3><code>reducer</code></h3><p>A function that gets called for every action and returns new application state accordingly</p></div></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><img src="84d8c1e066be03820c5c2dba175b975a.png"></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Actions</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:40%;flex-basis:40%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/actions.js</strong><code class="dm-code__editor hljs javascript">export function WithdrawAction(amount) {
-   return {
-       type: &#39;WITHDRAW&#39;,
-       amount
-   }
-}
-
-export function DepositAction(amount) {
-    return {
-        type: &#39;DEPOSIT&#39;,
-        amount
-    }
-}
-</code></pre></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><div class="fragment dm-fragment">Actions are the messages that tell the store there's a need to change state</div><div class="current-only fragment dm-code-focus" data-code-focus="2-5"><p>Action is a plain JS object</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="3"><p>Action must have a <code>type</code> property</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="4"><p>Usually there is some data attached to the action.</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="8-13"><p>To avoid mistakes, like typos, action objects are returned by functions - called <strong>action creators</strong></p>
-</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Reducer</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/reducer.js</strong><code class="dm-code__editor hljs javascript">export default function balanceReducer(state = { balance: 0 }, action) {
-    switch (action.type) {
-        case &#39;DEPOSIT&#39;:
-            return { balance: state.balance + action.amount };
-
-        case &#39;WITHDRAW&#39;:
-            return { balance: state.balance - action.amount };
-
-        default:
-            return state;
-    }
-}
-
-</code></pre><div class="current-only fragment dm-fragment">Reducers are called by Redux every time an action is dispatched</div><div class="current-only fragment dm-code-focus" data-code-focus="1"><p>Reducer is just a function.
-It is important that it is a <strong>pure function</strong> (a function that has no side-effects):
-it should always return new state object and not change anything outside of the function</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="1"><p>It takes two arguments: the current state and the dispatched action</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="1"><p>Initially there will be no state, so the default value is provided</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="2-11"><p>Every relevant action will be handled in this swtich statement depending on it's type</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="3-4"><p>The <code>DEPOSIT</code> action will increase the balance by a certain amount.</p>
-<p>The origial state is not modified here; a new object is returned instead.</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="9-10"><p>In case the action that has been dispatched
-doesn't match any action handler defined in this reducer,
-the current state will be returned by default.</p>
-</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">The store</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/app.js</strong><code class="dm-code__editor hljs javascript">import { createStore } from &#39;redux&#39;
-import { DepositAction, WithdrawAction } from &#39;./actions&#39;
-import balanceReducer from &#39;./reducer&#39;
-
-const store = createStore(balanceReducer);
-
-store.subscribe(() =&gt; {
-    const currentState = store.getState();
-
-    console.log(currentState);
-});
-
-store.dispatch(DepositAction(500));
-store.dispatch(DepositAction(100));
-store.dispatch(WithdrawAction(220));
-</code></pre></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><div class="fragment dm-fragment">Store is the centerpiece of redux.
-It glues state, actions and reducers together.
-There will be only one store per application.</div><div class="current-only fragment dm-code-focus" data-code-focus="5"><p>Create the store using the <code>createStore</code> funciton from <code>redux</code>.
-It takes the reducer as first argument.</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="7-12"><p>Use the <code>subscribe</code> method and pass in a callback.
-The callback will be called after every dispatched action.</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="8"><p>You can access the current application state using the <code>getState</code> method.</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="13-15"><p>Use the <code>dispatch</code> method to run some actions against the store.</p>
-</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Using Redux with React: the setup</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:50%;flex-basis:50%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/store.js</strong><code class="dm-code__editor hljs javascript">import React from &#39;react&#39;;
-import ReactDOM from &#39;react-dom&#39;;
-import { Provider } from &#39;react-redux&#39;
-import { createStore } from &#39;redux&#39;
-
-import App from &#39;./App&#39;;
-import &#39;./index.css&#39;;
-
-import balanceReducer from &#39;./reducer&#39;
-
-const store = createStore(balanceReducer);
-
-ReactDOM.render(
-    &lt;Provider store={store}&gt;
-        &lt;App /&gt;
-    &lt;/Provider&gt;,
-    document.getElementById(&#39;root&#39;)
-);</code></pre></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><div class="current-only fragment dm-code-focus" data-code-focus="9"><p>Reducers stay exactly the same</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="11"><p>Create the store</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="14-16"><p>The <code>Provider</code> component allows access to the store for all components in the application</p>
-</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Connecting store and components</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:50%;flex-basis:50%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/reducer.js</strong><code class="dm-code__editor hljs javascript">import React from &#39;react&#39;;
-import { connect } from &#39;react-redux&#39;
-
-function AppComponent({ accountBalance }) {
-    return (
-        &lt;div&gt;
-            &lt;h3&gt;Current balance: ${accountBalance}&lt;/h3&gt;
-        &lt;/div&gt;
-    )
-}
-
-function mapStateToProps(state) {
-    return {
-        accountBalance: state.balance
-    }
-}
-
-export default connect(mapStateToProps)(AppComponent);
-</code></pre></div><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="current-only fragment dm-code-focus" data-code-focus="4-10"><p>A simple component that displays the current balance</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="12-16"><p>The <code>mapStateToProps</code> function will be called everytime the application state changes.</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="13-15"><p>It's job is to return props for the component.</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="4"><p>The component will receive props provided by <code>mapStateToProps</code></p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="18"><p>Component and the function are connected via the <code>connect</code> utility from <code>react-redux</code></p>
-</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Dispatching actions</h3><div class="dm-slide__content"><div class="dm-slide__content__column" style="min-width:50%;flex-basis:50%;"><pre class="dm-code dm-code--view"><strong class="dm-code__filename">src/reducer.js</strong><code class="dm-code__editor hljs javascript">import React, { Component } from &#39;react&#39;
-import { connect } from &#39;react-redux&#39;
-import { DepositAction, WithdrawAction } from &#39;./actions&#39;
-
-class AppComponent extends Component {
-
-    onDeposit = () =&gt; {
-        this.props.dispatch(DepositAction(100))
-    }
-
-    onWithdraw = () =&gt; {
-        this.props.dispatch(WithdrawAction(100))
-    }
-
-    render() {
-        &lt;div&gt;
-            &lt;h3&gt;
-                Current balance: ${this.props.accountBalance}
-                &lt;button onClick={this.onDeposit}&gt;+&lt;/button&gt;
-                &lt;button onClick={this.onWithdraw}&gt;-&lt;/button&gt;
-            &lt;/h3&gt;
-        &lt;/div&gt;
-    }
-}
-
-function mapStateToProps(state) {
-    return {
-        accountBalance: state.balance
-    }
-}
-
-export default connect(mapStateToProps)(AppComponent);
-</code></pre></div><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="current-only fragment dm-code-focus" data-code-focus="5-24"><p>A simple component that displays the current balance</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="26-30"><p>The balance is provided by <code>mapStateToProps</code> function</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="7-9"><p>Clicking a button will result in action being called</p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="8"><p>The action is created by an action creator: <code>DepositAction</code>/<code>WithdrawAction</code></p>
-</div><div class="current-only fragment dm-code-focus" data-code-focus="8"><p>The <code>connect</code> function also provides the store's <code>dispatch</code> method in props</p>
-</div></div></div></div></section><!--include ./tasks--></div></div><script type="text/javascript" src="vendor.bundle_e2cacb6121b5e0e42d3b.js"></script><script type="text/javascript" src="bundle_e2cacb6121b5e0e42d3b.js"></script></body></html>
+</div></div></div></div></section><section class="dm-slide dm-slide--columns"><div class="dm-slide__content-wrapper"><h3 class="dm-slide__title">Redux in a nutshell</h3><div class="dm-slide__content"><div class="dm-slide__content__column l-column-middle" style="min-width:undefined%;flex-basis:undefined%;"><div class="fragment dm-fragment"><h3><code>store</code></h3><p>Holds current application state</p></div><div class="fragment dm-fragment"><h3><code>action</code></h3><p>An object that may result in change of state</p></div><div class="fragment dm-fragment"><h3><code>store#dispatch(action)</code></h3><p>Notifies the store about an action</p></div><div class="fragment dm-fragment"><h3><code>reducer</code></h3><p>A function that gets called for every action and returns new application state accordingly</p></div></div><div class="dm-slide__content__column" style="min-width:undefined%;flex-basis:undefined%;"><img src="84d8c1e066be03820c5c2dba175b975a.png"></div></div></div></section><!--include ./outside_react/index--><!--include ./react_redux/index--><!--include ./tasks--></div></div><script type="text/javascript" src="vendor.bundle_28bdd465f7b4ebff86ff.js"></script><script type="text/javascript" src="bundle_28bdd465f7b4ebff86ff.js"></script></body></html>
