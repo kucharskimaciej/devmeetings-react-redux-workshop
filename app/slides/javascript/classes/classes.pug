@@ -1,0 +1,53 @@
+extends ~layouts/columns
+
+block title
+    | Classes
+
+block content
+    +slide_column(60)
+        +code(null, 'javascript')
+            include:escape ./classes.js
+
+    +slide_column().l-column-middle
+        +code_focus('1-15').current-only
+            :markdown-it
+                Class is a blueprint used to create an object. Objects created using a class are called that class' instances
+
+        +code_focus('2').current-only
+            :markdown-it
+                Classes can have properties
+
+        +code_focus('4-6').current-only
+            :markdown-it
+                There is a special function called `constructor` that will be called everytime a new instance is created
+
+        +code_focus('8-10').current-only
+            :markdown-it
+                Classes can define functions - called methods. Every instance will have access to methods.
+
+        +code_focus('9').current-only
+            :markdown-it
+                `this` used in method refers to specific instance
+
+        +code_focus('17').current-only
+            :markdown-it
+                New instances are created using `new`. `myShape` is an instance of `Shape` class.
+
+        +code_focus('18-19').current-only
+            :markdown-it
+                It has access to methods defined on class.
+
+        +code_focus('21-32').current-only
+            :markdown-it
+                Classes can extend other classes. In this case `Circle` extends `Shape` class.
+                In other words: `Circle` is a type of `Shape`.
+
+        +code_focus('29-31').current-only
+            :markdown-it
+                `Circle` overrides - defines its own - `dimensions` method. Same goes for `type` property.
+
+        +code_focus('29-31').current-only
+            :markdown-it
+                `Circle` defines its own `constructor`.
+                But since it `extends` another class it has to call `super` function first.
+

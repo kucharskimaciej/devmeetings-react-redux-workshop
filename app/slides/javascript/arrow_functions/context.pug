@@ -1,0 +1,29 @@
+extends ~layouts/columns
+
+block title
+    | Arrow functions: about `this`
+
+block content
+    +slide_column(60)
+        +code(null, 'javascript')
+            include:escape ./context.js
+
+    +slide_column().l-column-middle
+
+        +code_focus('1-11').current-only
+            :markdown-it
+                `this` is a tricky subject in JS. Take this simple object as an example
+
+        +code_focus('13').current-only
+            :markdown-it
+                `user.greeting()` returns `"John"`, as expected
+
+        +code_focus('14').current-only
+            :markdown-it
+                There's another function inside the `delayedGreeting`: the `setTimeout` callback.
+                That causes `this` to be undefined and results in an error.
+
+        +code_focus('16-20').current-only
+            :markdown-it
+                Solution: use the arrow function syntax for the callback. It will bind the `this` to the user object.
+

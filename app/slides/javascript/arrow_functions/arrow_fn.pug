@@ -4,7 +4,7 @@ block title
     | Arrow functions
 
 block content
-    +slide_column(40)
+    +slide_column(60)
         +code(null, 'javascript')
             include:escape ./arrow_fn.js
 
@@ -26,10 +26,7 @@ block content
             :markdown-it
                 Functions `square` and `square2` are exactly the same
 
-        +code_focus('7-9').current-only
+        +code_focus('7').current-only
             :markdown-it
-                It can be used in any context: eg. objects
+                It can be used in any context: eg. callback
 
-        +code_focus('30-32').current-only
-            :markdown-it
-                ...or as a callback to shorten the expression
