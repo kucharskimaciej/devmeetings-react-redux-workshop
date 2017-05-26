@@ -1,0 +1,47 @@
+extends ~layouts/columns
+
+block title
+    | Transform one array into another using map
+
+block content
+    +slide_column(60)
+        +code(null, 'javascript')
+            include:escape ./map_example.js
+
+    +slide_column().l-column-middle
+
+        +code_focus('3-5').current-only
+            :markdown-it
+                The `squareNumber` function takes in a number and returs its square
+
+        +code_focus('7').current-only
+            :markdown-it
+                With `map` the `squareNumber` will be called for each item in `array`
+
+        +code_focus('9').current-only
+            :markdown-it
+                Return values of `squareNumber` form a new array
+
+        +code_focus('10').current-only
+            :markdown-it
+                The original array remains unchanged
+
+        +code_focus('13').current-only
+            :markdown-it
+                The function used in map can be inlined
+
+        +code_focus('16-32').current-only
+            :markdown-it
+                It works on objects, too; or any other value as long as it is in an array
+
+        +code_focus('34-36').current-only
+            :markdown-it
+                Map over the `books` array...
+
+        +code_focus('35').current-only
+            :markdown-it
+                ...for every `book` return its `name`
+
+        +code_focus('38').current-only
+            :markdown-it
+                The `titles` is an array of strings.

@@ -1,0 +1,51 @@
+extends ~layouts/columns
+
+block title
+    | .filter - Only take items that match some condition
+
+block content
+    +slide_column(60)
+        +code(null, 'javascript')
+            include:escape ./filter_example.js
+
+    +slide_column().l-column-middle
+
+        +code_focus('3-5').current-only
+            :markdown-it
+                The `biggerThan3` function takes in a number and returs true when it's bigger than 3
+
+        +code_focus('7').current-only
+            :markdown-it
+                With `filter` the `biggerThan3` will be called for each item in `array`
+
+        +code_focus('9').current-only
+            :markdown-it
+                `selectedNumbers` is an array that contains all the numbers that the `biggerThan3` has returned `true` for.
+
+        +code_focus('10').current-only
+            :markdown-it
+                The original array remains unchanged
+
+        +code_focus('12-28').current-only
+            :markdown-it
+                Just like `map` it can be called on any array
+
+        +code_focus('30-32').current-only
+            :markdown-it
+                Filter the `books` array to create `expensiveBooks` array that only includes those with price greater than $20.
+
+        +code_focus('34-36').current-only
+            :markdown-it
+                `map` and `filter` can be chained
+
+        +code_focus('35').current-only
+            :markdown-it
+                Find all books that match the `book.price > 20` condition...
+
+        +code_focus('36').current-only
+            :markdown-it
+                ...only take their titles
+
+        +code_focus('38').current-only
+            :markdown-it
+                `titlesOfExpensiveBooks` contains the names of books over $20

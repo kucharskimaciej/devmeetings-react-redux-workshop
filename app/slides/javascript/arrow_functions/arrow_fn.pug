@@ -1,0 +1,35 @@
+extends ~layouts/columns
+
+block title
+    | Arrow functions
+
+block content
+    +slide_column(40)
+        +code(null, 'javascript')
+            include:escape ./arrow_fn.js
+
+    +slide_column().l-column-middle
+
+        +code_focus('1-3').current-only
+            :markdown-it
+                It is just a new syntax for writing functions; drop the `function` keyword and add `=>` (arrow) symbol.
+
+        +code_focus('5').current-only
+            :markdown-it
+                If the arrow function takes just one argument the parenthesis can be dropped
+
+        +code_focus('5').current-only
+            :markdown-it
+                If it has just one line, the `return` keyword and brackets can be dropped
+
+        +code_focus('1-5').current-only
+            :markdown-it
+                Functions `square` and `square2` are exactly the same
+
+        +code_focus('7-9').current-only
+            :markdown-it
+                It can be used in any context: eg. objects
+
+        +code_focus('30-32').current-only
+            :markdown-it
+                ...or as a callback to shorten the expression
