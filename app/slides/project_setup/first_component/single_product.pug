@@ -1,7 +1,7 @@
 extends ~layouts/columns
 
 block title
-    | Just a function
+    | Single product component
 
 block content
     +slide_column(65)
@@ -30,17 +30,19 @@ block content
                 }
 
 
-        +code_focus('2-6').current-only
-            :markdown-it
-                We are hardcoding the product data in the function
-
-        +code_focus('9-18').current-only
-            :markdown-it
-                It's important that the component returns just one HTML element in the top-level. Any more than that and React will throw an error.
-
-        +code_focus('13-17').current-only
-            :markdown-it
-                Any javascript in the curly braces (`{ code }`) will be evaluated.
-
     +slide_column()
-        img(src=require('slides/project_setup/first_component/single_product.png'))
+        .l-column-fit
+            img(src=require('slides/project_setup/first_component/single_product.png')).l-island
+
+
+            +code_focus('2-6').current-only
+                :markdown-it
+                    We are hardcoding the product data in the function
+
+            +code_focus('9-18').current-only
+                :markdown-it
+                    It's important that the component returns just one HTML element in the top-level. Any more than that and React will throw an error.
+
+            +code_focus('13-17').current-only
+                :markdown-it
+                    Any javascript in the curly braces (`{ code }`) will be evaluated.

@@ -5,33 +5,34 @@ block title
 
 block content
     +slide_column()
-        +message_box('Hint', 'hint')
-            div Focus on basic tasks first. They are essential for next iteration.
-            div Make sure your code works. Don't prioritize HTML & CSS over React.
-            div If you get stuck, ask your group or one of the mentors for help.
+        .l-column-fit
+            +message_box('Hint', 'hint')
+                div Focus on basic tasks first. They are essential for next iteration.
+                div Make sure your code works. Don't prioritize HTML & CSS over React.
+                div If you get stuck, ask your group or one of the mentors for help.
 
-        +task('basic')
-            | Install node and create-react-app
+            +task('basic')
+                | Install node and create-react-app
 
-        +task('basic')
-            | Create a new application
+            +task('basic')
+                | Create a new application
 
-        +task('basic')
-            | Remove auto-generated code from the src directory
+            +task('basic')
+                | Remove auto-generated code from the src directory
 
-            +message_box(null, 'inside-box-hint')
-                | Don't remove code from `src/index.js`, it's fine.
+                +message_box(null, 'inside-box-hint')
+                    | Don't remove code from `src/index.js`, it's fine.
 
-        +task('basic')
-            | Create a simple component that displays a user contact
+            +task('basic')
+                | Create a simple component that displays a user contact
 
-            +message_box(null, 'inside-box-hint')
-                | A contact should have name, phone number, e-mail address and address.
-                | Consider using
-                |
-                a(href='https://randomuser.me/' target='_blank') randomuser.me
-                |
-                | for user data
+                +message_box(null, 'inside-box-hint')
+                    | A contact should have name, phone number, e-mail address and address.
+                    | Consider using
+                    |
+                    a(href='https://randomuser.me/' target='_blank') randomuser.me
+                    |
+                    | for user data
 
 
 

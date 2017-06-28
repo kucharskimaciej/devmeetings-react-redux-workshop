@@ -4,10 +4,11 @@ block title
     | Loading data from server
 
 block content
-    +slide_column()
+    +slide_column(60)
         +code('src/AsyncList.js', 'javascript')
             include:escape ./async_state.jsx
 
+    +slide_column(40).l-column-middle
 
         +code_focus('3-4').current-only
             :markdown-it

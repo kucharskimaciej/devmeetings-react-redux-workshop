@@ -4,7 +4,7 @@ block title
     | Adding links
 
 block content
-    +slide_column()
+    +slide_column(60)
         +code('src/App.js', 'javascript')
             :escape
                 import React from 'react'
@@ -31,10 +31,12 @@ block content
 
                 export default AppComponent
 
-        +code_focus('2').current-only
-            :markdown-it
-                Add the `Link` component to the list of imports
+    +slide_column(40).l-column-middle
+        .l-column-fit
+            +code_focus('2').current-only
+                :markdown-it
+                    Add the `Link` component to the list of imports
 
-        +code_focus('12-13').current-only
-            :markdown-it
-                The component will render a link with correct `href` and text.
+            +code_focus('12-13').current-only
+                :markdown-it
+                    The component will render a link with correct `href` and text.

@@ -42,13 +42,16 @@ block content
                     )
                 }
 
-        +code_focus('2-19').current-only
-            :markdown-it
-                Instead of one product our model is now a list of products
-
-        +code_focus('23-31').current-only
-            :markdown-it
-                Use the `Array.map` method to iterate over product and create JSX for each of them
-
     +slide_column()
-        img(src=require('slides/components_props/list_of_products.png'))
+        .l-column-fit
+            .l-island
+                +code_focus('2-19').current-only
+                    :markdown-it
+                        Instead of one product our model is now a list of products
+
+                +code_focus('23-31').current-only
+                    :markdown-it
+                        Use the `Array.map` method to iterate over product and create JSX for each of them
+
+            img(src=require('slides/components_props/list_of_products.png')).l-island
+

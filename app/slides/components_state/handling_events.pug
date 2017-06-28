@@ -9,25 +9,26 @@ block content
             include:escape ./events_example.jsx
 
     +slide_column()
-        img(src=require('slides/components_state/clicker.gif')).l-mbn
+        .l-column-fit
+            img(src=require('slides/components_state/clicker.gif')).l-island
 
-        +code_focus('3').current-only
-            :markdown-it
-                Use class component to have access to instance methods and fields
+            +code_focus('3').current-only
+                :markdown-it
+                    Use class component to have access to instance methods and fields
 
-        +code_focus('4-6').current-only
-            :markdown-it
-                Define the handler
+            +code_focus('4-6').current-only
+                :markdown-it
+                    Define the handler
 
-        +code_focus('10').current-only
-            :markdown-it
-                All handlers are assigned via the `onEventName` attribute
+            +code_focus('10').current-only
+                :markdown-it
+                    All handlers are assigned via the `onEventName` attribute
 
-        +code_focus('10').current-only
-            :markdown-it
-                Do not execute the hander here, just pass it in
+            +code_focus('10').current-only
+                :markdown-it
+                    Do not execute the hander here, just pass it in
 
-        +code_focus('5').current-only
-            :markdown-it
-                Use `event.target` to find out which button has been clicked in case you have many of them
+            +code_focus('5').current-only
+                :markdown-it
+                    Use `event.target` to find out which button has been clicked in case you have many of them
 

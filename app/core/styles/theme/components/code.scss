@@ -22,17 +22,24 @@
 
 .dm-slide .dm-code.dm-code--view {
   $padding-horizontal: rem(20px);
+  $filename-size: rem(48px);
 
-  height: auto;
-  margin-bottom: $lh-normal-computed;
+  height: 100%;
+  margin-bottom: 0;
+  margin-left: -1rem;
+  box-shadow: 2px 0 0 2px $quill-gray;
+  align-self: stretch;
+
+  position: relative;
 
   .dm-code__editor {
-    max-height: rem(600px);
+    max-height: 100%;
+    min-height: 100%;
 
     font-size: rem(24px);
     line-height: $lh-condensed-computed;
 
-    padding: rem(30px) $padding-horizontal rem(30px);
+    padding: (rem(30px) + $filename-size) $padding-horizontal rem(30px);
   }
 
   .dm-code__filename {
@@ -46,6 +53,9 @@
     background-color: $color-block-bg;
 
     padding: rem(10px) $padding-horizontal rem(6px);
+
+    position: absolute;
+    top: 0; left: 0; right: 0;
   }
 }
 

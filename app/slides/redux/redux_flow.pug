@@ -5,21 +5,23 @@ block title
 
 block content
     +slide_column().l-column-middle
-        +fragment()
-            h3: code store
-            p Holds current application state
+        .l-column-fit
+            +fragment()
+                h3: code store
+                p Holds current application state
 
-        +fragment()
-            h3: code action
-            p An object that may result in change of state
+            +fragment()
+                h3: code action
+                p An object that may result in change of state
 
-        +fragment()
-            h3: code store#dispatch(action)
-            p Notifies the store about an action
+            +fragment()
+                h3: code store#dispatch(action)
+                p Notifies the store about an action
 
-        +fragment()
-            h3: code reducer
-            p A function that gets called for every action and returns new application state accordingly
+            +fragment()
+                h3: code reducer
+                p A function that gets called for every action and returns new application state accordingly
 
-    +slide_column()
-        img(src=require('slides/redux/redux_flow.png'))
+    +slide_column().l-column-middle
+        .l-column-fit
+            img(src=require('slides/redux/redux_flow.png'))

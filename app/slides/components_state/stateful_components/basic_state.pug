@@ -9,26 +9,27 @@ block content
             include:escape ./counter_clicker.jsx
 
     +slide_column()
-        img(src=require('slides/components_state/stateful_components/click_count.gif')).l-mbn
+        .l-column-fit
+            img(src=require('slides/components_state/stateful_components/click_count.gif')).l-mbn
 
-        +code_focus('4-6').current-only
-            :markdown-it
-                Component state is always kept in a property called `state`.
-                `state` and `props` are the only properites that React watches for changes.
+            +code_focus('4-6').current-only
+                :markdown-it
+                    Component state is always kept in a property called `state`.
+                    `state` and `props` are the only properites that React watches for changes.
 
-        +code_focus('4-6').current-only
-            :markdown-it
-                Define initial component state.
-                This is the only place where you write to the state property directly
+            +code_focus('4-6').current-only
+                :markdown-it
+                    Define initial component state.
+                    This is the only place where you write to the state property directly
 
-        +code_focus('17').current-only
-            :markdown-it
-                Display data from the state
+            +code_focus('17').current-only
+                :markdown-it
+                    Display data from the state
 
-        +code_focus('9-11').current-only
-            :markdown-it
-                Modify the state using the `setState` method. `this.state = ...` will not work.
+            +code_focus('9-11').current-only
+                :markdown-it
+                    Modify the state using the `setState` method. `this.state = ...` will not work.
 
-        +code_focus('8-12').current-only
-            :markdown-it
-                Arrow function is used to bind `this` correctly to the component instance
+            +code_focus('8-12').current-only
+                :markdown-it
+                    Arrow function is used to bind `this` correctly to the component instance

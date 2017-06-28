@@ -3,13 +3,18 @@
   .dm-slide__content {
     display: flex;
     flex-direction: row;
+    align-items: stretch;
 
     padding-left: 1rem;
     padding-right: 1rem;
 
     &__column {
+
       width: 100%;
       padding: 0 0.5rem;
+
+      height: 100%;
+      min-height: min-content;
 
       display: flex;
       flex-direction: column;

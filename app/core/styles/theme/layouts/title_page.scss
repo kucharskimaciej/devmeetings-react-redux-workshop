@@ -4,4 +4,20 @@
     align-items: center;
     justify-content: center;
   }
+
+  .dm-slide-title {
+    padding: 0 1rem;
+
+    text-align: left;
+
+    font-family: $ff-base;
+    font-weight: $fw-black;
+
+    font-size: rem(72px);
+    line-height: $lh-extra-condensed;
+
+    padding-bottom: $lh-condensed-computed/2;
+    padding-top: $lh-condensed-computed/2;
+    margin-bottom: 0;
+  }
 }

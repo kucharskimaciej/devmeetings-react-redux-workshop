@@ -5,26 +5,28 @@ block title
 
 block content
 
-    +slide_column(40)
-        img(src=require('slides/redux/logo-redux.png'))
+    +slide_column(40).l-column-middle
+        .l-column-fit
+            img(src=require('slides/redux/logo-redux.png'))
 
-    +slide_column()
-        +fragment()
-            :markdown-it
-                ### Single source of truth
+    +slide_column().l-column-middle
+        .l-column-fit
+            +fragment()
+                :markdown-it
+                    ### Single source of truth
 
-                The complete state of an application is kept in one place, which ensures no duplication or conflicts.
+                    The complete state of an application is kept in one place, which ensures no duplication or conflicts.
 
-        +fragment()
-            :markdown-it
-                ### Predictable
+            +fragment()
+                :markdown-it
+                    ### Predictable
 
-                The state can only be changed via events (actions). It makes tracking the changes very easy.
+                    The state can only be changed via events (actions). It makes tracking the changes very easy.
 
-        +fragment()
-            :markdown-it
-                ### Immutable
+            +fragment()
+                :markdown-it
+                    ### Immutable
 
-                The state is represented as an immutable object. Every change creates a new snapshot.
-                This provides solid performance (no need to compare values!) and easy testing.
+                    The state is represented as an immutable object. Every change creates a new snapshot.
+                    This provides solid performance (no need to compare values!) and easy testing.
 
